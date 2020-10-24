@@ -1,6 +1,7 @@
+let globalId = 0
 class Operator{
-    constructor(id, nome){
-        this.id = id
+    constructor(nome){
+        this.id = globalId++
         this.nome = nome
     } 
     

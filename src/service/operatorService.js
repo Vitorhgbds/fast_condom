@@ -20,18 +20,15 @@ tableBody.append(tableRowBody)
 tableOperators.append(tableHead)
 tableOperators.append(tableBody)
 
-
 let operators = [
-    new Operator(0,"vitor"), new Operator(1,"eduarda")
+    new Operator("vitor"), new Operator("Mathias"), new Operator("julia")
 ]
-
-var count = 2
 
 tableOperatorsMout(operators)
 
 function addOperator(nome){
-    let operator = new Operator(count,nome)
-    Array.of(this.operators).push(operator)
+    let operator = new Operator(nome)
+    operators.push(operator)
     var novaLinha = document.createElement("tr")
     var novaColunaId = document.createElement("td")
     var novaColunaNome = document.createElement("td")
@@ -49,11 +46,10 @@ function addOperator(nome){
     novaLinha.append(novaColunaDelete)
 
     tableBody.append(novaLinha)
-    count++;
 }
 
 function tableOperatorsMout(operators){
-    Array.of(operators).forEach(ope => {
+    operators.forEach(ope => {
         var novaLinha = document.createElement("tr")
         var novaColunaId = document.createElement("td")
         var novaColunaNome = document.createElement("td")
@@ -75,8 +71,7 @@ function tableOperatorsMout(operators){
 }
 
 function deleteOperatorFromList(operator){
-    Array.of(this.operators).filter(ope => ope.id === operator.id).pop()
-    count--;
+    operators = operators.filter(ope => ope.id !== operator.id)
 }
 
 function deleteOperator(operatorLine, operator){
