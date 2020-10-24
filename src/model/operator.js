@@ -3,6 +3,9 @@ class Operator{
     constructor(nome){
         this.id = globalId++
         this.nome = nome
+        var siglaDoNome
+        
+        this.sigla
     } 
     
     getName(){
