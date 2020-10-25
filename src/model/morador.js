@@ -1,20 +1,21 @@
   
-let globalId = 0
 class Morador{
-    constructor(nome){
-        this.id = globalId++
+    constructor(nome, RG, nroAp){
+        this.RG = RG
         this.nome = nome
-        var siglaDoNome
-        
-        this.sigla
+        this.nroAp = nroAp
     } 
     
     getName(){
         return this.nome
     }
 
-    getId(){
-        return this.id
+    getRG(){
+        return this.RG
+    }
+
+    getNroAp(){
+        return this.nroAp
     }
 
     setName(novoNome){
