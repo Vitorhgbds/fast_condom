@@ -6,7 +6,7 @@ let operators = [
 
 tableOperatorsMout(operators)
 
-function addOperator(nome){
+function addOperator(nome) {
     let operator = new Operator(nome)
     operators.push(operator)
     var novaLinha = document.createElement("tr")
@@ -16,7 +16,7 @@ function addOperator(nome){
     var novaColunaDelete = document.createElement("td")
     var buttonDelete = document.createElement("button")
     var centralizando = document.createElement("center");
-    buttonDelete.style = "width:20%!important; padding-left:10%; padding-right:10%;"
+    buttonDelete.style = " padding-left:10%; padding-right:10%;"
     buttonDelete.innerText = "delete"
     buttonDelete.className = "button"
     buttonDelete.addEventListener("click", () => deleteOperator(novaLinha, operator))
@@ -36,7 +36,7 @@ function addOperator(nome){
     corpoTabelaOperadores.append(novaLinha)
 }
 
-function tableOperatorsMout(operators){
+function tableOperatorsMout(operators) {
     operators.forEach(ope => {
         var novaLinha = document.createElement("tr")
         var novaColunaId = document.createElement("td")
@@ -45,7 +45,7 @@ function tableOperatorsMout(operators){
         var novaColunaDelete = document.createElement("td")
         var buttonDelete = document.createElement("button")
         var centralizando = document.createElement("center");
-        buttonDelete.style = "width:20%!important; padding-left:10%; padding-right:10%;"
+        buttonDelete.style = " padding-left:10%; padding-right:10%;"
         buttonDelete.innerText = "delete"
         buttonDelete.className = "button"
         buttonDelete.addEventListener("click", () => deleteOperator(novaLinha, ope))
@@ -66,11 +66,11 @@ function tableOperatorsMout(operators){
     })
 }
 
-function deleteOperatorFromList(operator){
+function deleteOperatorFromList(operator) {
     operators = operators.filter(ope => ope.id !== operator.id)
 }
 
-function deleteOperator(operatorLine, operator){
+function deleteOperator(operatorLine, operator) {
     deleteOperatorFromList(operator)
     corpoTabelaOperadores.removeChild(operatorLine)
 }
