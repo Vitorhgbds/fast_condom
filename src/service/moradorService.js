@@ -20,11 +20,11 @@ function addMorador(nome) {
     buttonDelete.style = "padding-left:10%; padding-right:10%;"
     buttonDelete.innerText = "delete"
     buttonDelete.className = "button"
-    buttonDelete.addEventListener("click", () => deleteOperator(novaLinha, operator))
+    buttonDelete.addEventListener("click", () => deleteMorador(novaLinha, morador))
 
-    novaColunaId.innerText = operator.getId()
-    novaColunaNome.innerText = operator.getName()
-    novaColunaSigla.innerText = operator.getIniciais()
+    novaColunaId.innerText = morador.getId()
+    novaColunaNome.innerText = morador.getName()
+    novaColunaSigla.innerText = morador.getIniciais()
 
     centralizando.append(buttonDelete)
     novaColunaDelete.append(centralizando)
@@ -34,11 +34,11 @@ function addMorador(nome) {
     novaLinha.append(novaColunaSigla)
     novaLinha.append(novaColunaDelete)
 
-    corpoTabelaOperadores.append(novaLinha)
+    corpoTabelaMoradores.append(novaLinha)
 }
 
 function tableMoradoresMout(moradores) {
-    moradores.forEach(ope => {
+    moradores.forEach(mor => {
         var novaLinha = document.createElement("tr")
         var novaColunaId = document.createElement("td")
         var novaColunaNome = document.createElement("td")
@@ -50,11 +50,11 @@ function tableMoradoresMout(moradores) {
         buttonDelete.style = "padding-left:10%; padding-right:10%;"
         buttonDelete.innerText = "delete"
         buttonDelete.className = "button"
-        buttonDelete.addEventListener("click", () => deleteMorador(novaLinha, ope))
+        buttonDelete.addEventListener("click", () => deleteMorador(novaLinha, mor))
 
-        novaColunaId.innerText = ope.id
-        novaColunaNome.innerText = ope.nome
-        novaColunaSigla.innerText = ope.sigla
+        novaColunaId.innerText = mor.id
+        novaColunaNome.innerText = mor.nome
+        novaColunaSigla.innerText = mor.sigla
 
         centralizando.append(buttonDelete)
         novaColunaDelete.append(centralizando)
@@ -68,11 +68,11 @@ function tableMoradoresMout(moradores) {
     })
 }
 
-function deleteMoradorFromList(operator) {
+function deleteMoradorFromList(morador) {
     moradores = moradores.filter(mor => mor.id !== mor.id)
 }
 
 function deleteMorador(moradorLine, morador) {
-    deleteMoradorFromList(operator)
-    corpoTabelaMoradores.removeChild(operatorLine)
+    deleteMoradorFromList(morador)
+    corpoTabelaMoradores.removeChild(moradorLine)
 }
