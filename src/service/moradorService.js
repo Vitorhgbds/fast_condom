@@ -1,37 +1,37 @@
 const corpoTabelaMoradores = document.getElementById('tabelaMoradores')
 
 let moradores = [
-    new Morador("vitor"), new Morador("Mathias"), new Morador("julia")
+    new Morador("vitor", "934824", "A21"), new Morador("Mathias", "94358", "B15"), new Morador("julia", "284748", "A12")
 ]
 
 tableMoradoresMout(moradores)
 
-function addMorador(nome) {
-    let morador = new Morador(nome)
+function addMorador(nome, rg, numeroAp) {
+    let morador = new Morador(nome, rg, numeroAp)
     moradores.push(morador)
     var novaLinha = document.createElement("tr")
-    var novaColunaId = document.createElement("td")
     var novaColunaNome = document.createElement("td")
-    var novaColunaSigla = document.createElement("td")
+    var novaColunaRg = document.createElement("td")
+    var novaColunaAp = document.createElement("td")
     var novaColunaDelete = document.createElement("td")
     var buttonDelete = document.createElement("button")
-    var centralizando = document.createElement("center");
+    var centralizando = document.createElement("center")
 
     buttonDelete.style = "padding-left:10%; padding-right:10%;"
     buttonDelete.innerText = "delete"
     buttonDelete.className = "button"
     buttonDelete.addEventListener("click", () => deleteMorador(novaLinha, morador))
 
-    novaColunaId.innerText = morador.getId()
     novaColunaNome.innerText = morador.getName()
-    novaColunaSigla.innerText = morador.getIniciais()
+    novaColunaRg.innerText = morador.getRg()
+    novaColunaAp.innerText = morador.getNumeroAp()
 
     centralizando.append(buttonDelete)
     novaColunaDelete.append(centralizando)
 
-    novaLinha.append(novaColunaId)
     novaLinha.append(novaColunaNome)
-    novaLinha.append(novaColunaSigla)
+    novaLinha.append(novaColunaRg)
+    novaLinha.append(novaColunaAp)
     novaLinha.append(novaColunaDelete)
 
     corpoTabelaMoradores.append(novaLinha)
@@ -40,28 +40,28 @@ function addMorador(nome) {
 function tableMoradoresMout(moradores) {
     moradores.forEach(mor => {
         var novaLinha = document.createElement("tr")
-        var novaColunaId = document.createElement("td")
         var novaColunaNome = document.createElement("td")
-        var novaColunaSigla = document.createElement("td")
+        var novaColunaRg = document.createElement("td")
+        var novaColunaAp = document.createElement("td")
         var novaColunaDelete = document.createElement("td")
         var buttonDelete = document.createElement("button")
-        var centralizando = document.createElement("center");
+        var centralizando = document.createElement("center")
 
         buttonDelete.style = "padding-left:10%; padding-right:10%;"
         buttonDelete.innerText = "delete"
         buttonDelete.className = "button"
         buttonDelete.addEventListener("click", () => deleteMorador(novaLinha, mor))
 
-        novaColunaId.innerText = mor.id
         novaColunaNome.innerText = mor.nome
-        novaColunaSigla.innerText = mor.sigla
+        novaColunaRg.innerText = mor.rg
+        novaColunaAp.innerText = mor.numeroAp
 
         centralizando.append(buttonDelete)
         novaColunaDelete.append(centralizando)
 
-        novaLinha.append(novaColunaId)
         novaLinha.append(novaColunaNome)
-        novaLinha.append(novaColunaSigla)
+        novaLinha.append(novaColunaRg)
+        novaLinha.append(novaColunaAp)
         novaLinha.append(novaColunaDelete)
 
         corpoTabelaMoradores.append(novaLinha)
