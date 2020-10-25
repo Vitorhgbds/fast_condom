@@ -16,11 +16,8 @@ function addOperator(nome) {
     var novaColunaDelete = document.createElement("td")
     var buttonDelete = document.createElement("button")
     var centralizando = document.createElement("center");
-<<<<<<< HEAD
-    buttonDelete.style = " padding-left:10%; padding-right:10%;"
-=======
+
     buttonDelete.style = "padding-left:10%; padding-right:10%;"
->>>>>>> 5e8dcf7491691f13ada4377ab0e8c8e47aa2990b
     buttonDelete.innerText = "delete"
     buttonDelete.className = "button"
     buttonDelete.addEventListener("click", () => deleteOperator(novaLinha, operator))
@@ -49,11 +46,8 @@ function tableOperatorsMout(operators) {
         var novaColunaDelete = document.createElement("td")
         var buttonDelete = document.createElement("button")
         var centralizando = document.createElement("center");
-<<<<<<< HEAD
-        buttonDelete.style = " padding-left:10%; padding-right:10%;"
-=======
+
         buttonDelete.style = "padding-left:10%; padding-right:10%;"
->>>>>>> 5e8dcf7491691f13ada4377ab0e8c8e47aa2990b
         buttonDelete.innerText = "delete"
         buttonDelete.className = "button"
         buttonDelete.addEventListener("click", () => deleteOperator(novaLinha, ope))
