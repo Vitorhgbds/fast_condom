@@ -1,7 +1,7 @@
 const corpoTabelaOperadores = document.getElementById('tabelaOperadores')
 
 let operators = [
-    new Operator("vitor"), new Operator("Mathias"), new Operator("julia")
+    new Operator("Vitor Hugo"), new Operator("Mathias Kauf"), new Operator("Julia Mako")
 ]
 
 tableOperatorsMout(operators)
@@ -9,6 +9,25 @@ tableOperatorsMout(operators)
 function addOperator(nome) {
     let operator = new Operator(nome)
     operators.push(operator)
+    addLineWith(operator)
+}
+
+function tableOperatorsMout(operators) {
+    operators.forEach(ope => {
+        addLineWith(ope)
+    })
+}
+
+function deleteOperatorFromList(operator) {
+    operators = operators.filter(ope => ope.id !== operator.id)
+}
+
+function deleteOperator(operatorLine, operator) {
+    deleteOperatorFromList(operator)
+    corpoTabelaOperadores.removeChild(operatorLine)
+}
+
+function addLineWith(operator){
     var novaLinha = document.createElement("tr")
     var novaColunaId = document.createElement("td")
     var novaColunaNome = document.createElement("td")
@@ -22,9 +41,9 @@ function addOperator(nome) {
     buttonDelete.className = "button"
     buttonDelete.addEventListener("click", () => deleteOperator(novaLinha, operator))
 
-    novaColunaId.innerText = operator.getId()
-    novaColunaNome.innerText = operator.getName()
-    novaColunaSigla.innerText = operator.getIniciais()
+    novaColunaId.innerText = operator.id
+    novaColunaNome.innerText = operator.nome
+    novaColunaSigla.innerText = operator.getIniciais();
 
     centralizando.append(buttonDelete)
     novaColunaDelete.append(centralizando)
@@ -35,44 +54,4 @@ function addOperator(nome) {
     novaLinha.append(novaColunaDelete)
 
     corpoTabelaOperadores.append(novaLinha)
-}
-
-function tableOperatorsMout(operators) {
-    operators.forEach(ope => {
-        var novaLinha = document.createElement("tr")
-        var novaColunaId = document.createElement("td")
-        var novaColunaNome = document.createElement("td")
-        var novaColunaSigla = document.createElement("td")
-        var novaColunaDelete = document.createElement("td")
-        var buttonDelete = document.createElement("button")
-        var centralizando = document.createElement("center");
-
-        buttonDelete.style = "padding-left:10%; padding-right:10%;"
-        buttonDelete.innerText = "delete"
-        buttonDelete.className = "button"
-        buttonDelete.addEventListener("click", () => deleteOperator(novaLinha, ope))
-
-        novaColunaId.innerText = ope.id
-        novaColunaNome.innerText = ope.nome
-        novaColunaSigla.innerText = ope.sigla
-
-        centralizando.append(buttonDelete)
-        novaColunaDelete.append(centralizando)
-
-        novaLinha.append(novaColunaId)
-        novaLinha.append(novaColunaNome)
-        novaLinha.append(novaColunaSigla)
-        novaLinha.append(novaColunaDelete)
-
-        corpoTabelaOperadores.append(novaLinha)
-    })
-}
-
-function deleteOperatorFromList(operator) {
-    operators = operators.filter(ope => ope.id !== operator.id)
-}
-
-function deleteOperator(operatorLine, operator) {
-    deleteOperatorFromList(operator)
-    corpoTabelaOperadores.removeChild(operatorLine)
 }
