@@ -1,25 +1,35 @@
 const corpoTabelaEntregas = document.getElementById('tabelaEntregas')
 
-let entregas = [
-    new Entrega("25/10/2020","15:45","Submarino", "B32", "VH"), new Entrega("26/10/2020","17:45","ShopTime", "B40", "JM"), new Entrega("26/10/2020","08:11","Amazon", "B31", "VH")
-]
+let entregas = []
+
+entregas = JSON.parse(localStorage.getItem('entregas')) 
+                        || [new Entrega("lalalaa", findMorador(1),
+                             findOperator("J. M"), "26/10/2020", "27/10/2020")]
+
+localStorage.setItem('entregas',JSON.stringify(entregas))
+globalEntregaId = parseInt(localStorage.getItem('idEntregas') || '1')
 
 tableEntregasMout(entregas)
 
-function addEntregas(data,hora,descricao,nroAp, operador) {
-    let entrega = new Entrega(data,hora,descricao,nroAp, operador)
-    entregas.push(entrega)
-    addLineWith(entrega)
+function addEntrega(data_Saida, descricao, siglaOperador, data_Entrega, idMorador) {
+        let entrega = new Entrega(descricao, findMorador(idMorador),
+                            findOperator(siglaOperador), data_Saida, data_Entrega)
+        entregas.push(entrega)
+
+        localStorage.setItem('entregas',JSON.stringify(entregas))
+        localStorage.setItem('idEntregas',globalEntregaId)
+        addLineWith(entrega)
 }
 
 function tableEntregasMout(entregas) {
-    entregas.forEach(mor => {
-        addLineWith(mor)
+    entregas.forEach(ent => {
+        addLineWith(ent)
     })
 }
 
-function deleteEntregasFromList(entrega) {
-    entregas = entrega.filter(mor => mor.id !== mor.id)
+function deleteEntregaFromList(entrega) {
+    entregas = entregas.filter(ent => ent.id !== entrega.id)
+    localStorage.setItem('entregas',JSON.stringify(entregas))
 }
 
 function deleteEntrega(entregaLine, entrega) {
@@ -29,11 +39,13 @@ function deleteEntrega(entregaLine, entrega) {
 
 function addLineWith(entrega){
     var novaLinha = document.createElement("tr")
+    var novaColunaId = document.createElement("td")
     var novaColunaData = document.createElement("td")
-    var novaColunaHora = document.createElement("td")
     var novaColunaDescricao = document.createElement("td")
     var novaColunaNroAp = document.createElement("td")
     var novaColunaOperador = document.createElement("td")
+    var novaColunaRetirada = document.createElement("td")
+    var novaColunaMorador = document.createElement("td")
     var novaColunaDelete = document.createElement("td")
     var buttonDelete = document.createElement("button")
     var centralizando = document.createElement("center");
@@ -41,23 +53,30 @@ function addLineWith(entrega){
     buttonDelete.style = "padding-left:10%; padding-right:10%;"
     buttonDelete.innerText = "delete"
     buttonDelete.className = "button"
-    buttonDelete.addEventListener("click", () => deleteEntrega(novaLinha, entrega))
+    buttonDelete.addEventListener("click", () => deleteEntrega(novaLinha, morador))
 
-    novaColunaData.innerText = entrega.data
-    novaColunaHora.innerText = entrega.hora
+    
+    novaColunaId.innerText = entrega.id
+    novaColunaData.innerText = entrega.data_Saida
     novaColunaDescricao.innerText = entrega.descricao
-    novaColunaNroAp.innerText = entrega.nroAp
-    novaColunaOperador.innerText = entrega.operador
+    novaColunaNroAp.innerText = entrega.morador.nroAp
+    novaColunaOperador.innerText = entrega.operador.sigla
+    novaColunaRetirada.innerText = entrega.data_Entrega
+    novaColunaMorador.innerText = entrega.morador.nome
+    novaColunaDelete 
+    
 
     centralizando.append(buttonDelete)
     novaColunaDelete.append(centralizando)
 
+    novaLinha.append(novaColunaId)
     novaLinha.append(novaColunaData)
-    novaLinha.append(novaColunaHora)
     novaLinha.append(novaColunaDescricao)
     novaLinha.append(novaColunaNroAp)
     novaLinha.append(novaColunaOperador)
-    novaLinha.append(novaColunaDelete)
+    novaLinha.append(novaColunaRetirada)
+    novaLinha.append(novaColunaMorador)
+
 
     corpoTabelaEntregas.append(novaLinha)
 }

@@ -7,7 +7,7 @@ operadores = JSON.parse(localStorage.getItem('operadores'))
                         || [new Operator("Vitor Hugo"), new Operator("Julia Makowski"),
                             new Operator("Lucas Bankow")]
 
-globalOperatorId = parseInt(localStorage.getItem('idOperadores') || '2')
+globalOperatorId = parseInt(localStorage.getItem('idOperadores') || '3')
 
 localStorage.setItem('operadores', JSON.stringify(operadores)) 
 localStorage.setItem('idOperadores', globalOperatorId)
@@ -27,8 +27,7 @@ function addOperator(nome) {
 }
 
 function tableOperatorsMout(operators) {
-    operators = JSON.parse(localStorage.getItem('operadores'))
-    if(operators){
+    if(corpoTabelaOperadores){
         operators.forEach(ope => {
             addLineWith(ope)
         })
@@ -45,8 +44,8 @@ function deleteOperator(operatorLine, operator) {
     corpoTabelaOperadores.removeChild(operatorLine)
 }
 
-function findOperator(id){
-    return operadores.find(ope => ope.id === parseInt(id))
+function findOperator(sigla){
+    return operadores.find(ope => ope.sigla === sigla)
 }
 
 function addLineWith(operator){

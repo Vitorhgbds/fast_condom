@@ -8,7 +8,7 @@ moradores = JSON.parse(localStorage.getItem('moradores'))
                             new Morador("Julia Almeida","1112223333","C41")]
 
 localStorage.setItem('moradores',JSON.stringify(moradores))
-globalMoradorId  = parseInt(localStorage.getItem('idMoradores') || '3')
+globalMoradorId = parseInt(localStorage.getItem('idMoradores') || '3')
 
 
 
