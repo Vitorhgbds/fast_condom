@@ -2,23 +2,22 @@ const corpoTabelaEntregas = document.getElementById('tabelaEntregas')
 
 let entregas = []
 
-entregas = JSON.parse(localStorage.getItem('entregas')) 
-                        || [new Entrega("lalalaa", findMorador(1),
-                             findOperator("J. M"), "26/10/2020", "27/10/2020")]
+entregas = JSON.parse(localStorage.getItem('entregas')) || [new Entrega("lalalaa", findMorador(1),
+    findOperator("J. M"), "26/10/2020", "27/10/2020")]
 
-localStorage.setItem('entregas',JSON.stringify(entregas))
+localStorage.setItem('entregas', JSON.stringify(entregas))
 globalEntregaId = parseInt(localStorage.getItem('idEntregas') || '1')
 
 tableEntregasMout(entregas)
 
 function addEntrega(data_Saida, descricao, siglaOperador, data_Entrega, idMorador) {
-        let entrega = new Entrega(descricao, findMorador(idMorador),
-                            findOperator(siglaOperador), data_Saida, data_Entrega)
-        entregas.push(entrega)
+    let entrega = new Entrega(descricao, findMorador(idMorador),
+        findOperator(siglaOperador), data_Saida, data_Entrega)
+    entregas.push(entrega)
 
-        localStorage.setItem('entregas',JSON.stringify(entregas))
-        localStorage.setItem('idEntregas',globalEntregaId)
-        addLineWith(entrega)
+    localStorage.setItem('entregas', JSON.stringify(entregas))
+    localStorage.setItem('idEntregas', globalEntregaId)
+    addLineWith(entrega)
 }
 
 function tableEntregasMout(entregas) {
@@ -29,7 +28,7 @@ function tableEntregasMout(entregas) {
 
 function deleteEntregaFromList(entrega) {
     entregas = entregas.filter(ent => ent.id !== entrega.id)
-    localStorage.setItem('entregas',JSON.stringify(entregas))
+    localStorage.setItem('entregas', JSON.stringify(entregas))
 }
 
 function deleteEntrega(entregaLine, entrega) {
@@ -37,7 +36,7 @@ function deleteEntrega(entregaLine, entrega) {
     corpoTabelaEntregas.removeChild(entregaLine)
 }
 
-function addLineWith(entrega){
+function addLineWith(entrega) {
     var novaLinha = document.createElement("tr")
     var novaColunaId = document.createElement("td")
     var novaColunaData = document.createElement("td")
@@ -55,7 +54,7 @@ function addLineWith(entrega){
     buttonDelete.className = "button"
     buttonDelete.addEventListener("click", () => deleteEntrega(novaLinha, morador))
 
-    
+
     novaColunaId.innerText = entrega.id
     novaColunaData.innerText = entrega.data_Saida
     novaColunaDescricao.innerText = entrega.descricao
@@ -63,8 +62,8 @@ function addLineWith(entrega){
     novaColunaOperador.innerText = entrega.operador.getIniciais()
     novaColunaRetirada.innerText = entrega.data_Entrega
     novaColunaMorador.innerText = entrega.morador.nome
-    novaColunaDelete 
-    
+    novaColunaDelete
+
 
     centralizando.append(buttonDelete)
     novaColunaDelete.append(centralizando)
@@ -79,4 +78,14 @@ function addLineWith(entrega){
 
 
     corpoTabelaEntregas.append(novaLinha)
+}
+
+
+///////////// COISAS DO POP-UP COMEÇA AQUI CUIDADO 
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
 }

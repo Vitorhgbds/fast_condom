@@ -9,18 +9,18 @@
 </head>
 
 <body>
-     <!-- menu aqui nao mexer -->
-     <div id="header_line">
+    <!-- menu aqui nao mexer -->
+    <div id="header_line">
         <div id="sidebar_title">FAST CONDOM<br></div>
 
         <div id="custom_links">
             <a href="/"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
                 </br>Home</a>
-            <a href="#"><img src="../svg/contact.svg" style="width:20px; padding-bottom:1px;"></img></br>Contact</a>
+            <a href="#"><img src="../svg/contact.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Contact</a>
             <a href="entregasList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
                 </br>Entregas</a>
-            <a href="buscaEntregas.html"><img src="../svg/funcionalidade.svg"
-                    style="width:20px; padding-bottom:1px;"></img>
+            <a href="buscaEntregas.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
                 </br>Funcionalidades</a>
             <a href="index.html"><img src="../svg/operador.svg" style="width:20px; padding-bottom:1px;"></img>
                 </br>Operador</a>
@@ -62,16 +62,63 @@
 
                 </div>
                 <center>
+
+                    <!-- botao para abrir o popUp -->
                     <div class="add">
-                        <button style="padding: 5px 15px 5px 15px;
-            font-size: small;
-            font-family: 'Montserrat', sans-serif;" class="button" onclick="addEntrega(prompt('Digite uma data de saida da mercadoria'),
-                         prompt('Digite uma descrição'), 
-                         prompt('Digite a sigla do operador'), 
-                         prompt('Digite a data da retirada(caso ja tenha sido realizada)'), 
-                         prompt('Digite o id do morador')
-                         )">Adicionar</button>
+                        <button href="#?w=500" style="padding: 5px 15px 5px 15px;font-size: small;font-family: 'Montserrat', sans-serif;" class="open-button; button" onclick="openForm()">Adicionar</button>
+
                     </div>
+
+
+
+
+                    <center>
+                        <!-- CONTEUDO DO POP UP AQUI  -->
+                        <div href="#?w=500" class="form-popup" id="myForm">
+                            <form action="/action_page.php" class="form-container">
+                                <h1>Login</h1>
+
+                                <label for="dataInicial"><b>Data Inicial</b></label><br>
+                                <input type="date" placeholder="19/08/2020" name="dataInicial" required>
+                                <br>
+                                <br>
+                                <label for="dataFinal"><b>Data Final</b></label><br>
+                                <input type="date" placeholder="10/08/2021" name="dataFinal" required>
+
+                                <br>
+                                <br>
+                                <label for="descr"><b>Data Final</b></label>
+                                <input type="text" placeholder="Descrição" name="descri" required>
+
+
+                                <label for="operador"><b>Operadores</b></label>
+                                <select class="dropdown" placeholder="Escolha o nome" name="operadores" required>
+                                    <option value="#">Navegue</option>
+                                    <option value="#">Navegue</option>
+                                    <option value="#">Navegue</option>
+                                    <option value="#">Navegue</option>
+                                    <option value="#">Navegue</option>
+                                </select>
+
+
+                                <label for="moradores"><b>Moradores</b></label>
+                                <select class="dropdown" placeholder="Escolha o nome" name="moradores" required>
+                                    <option value="#">Navegue</option>
+                                    <option value="#">Navegue</option>
+                                    <option value="#">Navegue</option>
+                                    <option value="#">Navegue</option>
+                                    <option value="#">Navegue</option>
+                                </select>
+
+
+
+                                <center>
+                                    <button type="submit" class="btn button">Login</button>
+                                    <button type="button" class="btn cancel button" onclick="closeForm()">Close</button>
+                                </center>
+                            </form>
+                        </div>
+                    </center>
                 </center>
 
             </div>
@@ -85,6 +132,7 @@
         <script src="../src/service/operatorService.js"></script>
         <script src="../src/model/entrega.js"></script>
         <script src="../src/service/entregaService.js"></script>
+
 </body>
 
 </html>
