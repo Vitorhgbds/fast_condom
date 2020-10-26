@@ -1,7 +1,7 @@
-let globalId1 = 0
+let globalEntregaId = 0
 class Entrega{
     constructor(descricao, morador, operador,data_Saida, data_Entrega){
-        this.id = globalId1++
+        this.id = globalEntregaId++
         this.descricao = descricao
         this.morador = morador
         this.data_Entrega = data_Entrega

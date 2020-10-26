@@ -8,6 +8,7 @@ moradores = JSON.parse(localStorage.getItem('moradores'))
                             new Morador("Julia Almeida","1112223333","C41")]
 
 localStorage.setItem('moradores',JSON.stringify(moradores))
+globalMoradorId = parseInt(localStorage.getItem('idMoradores') || '3')
 
 
 
@@ -18,13 +19,20 @@ function addMorador(nome,RG,nroAp) {
     moradores.push(morador)
 
     localStorage.setItem('moradores',JSON.stringify(moradores))
+    localStorage.setItem('idMoradores',globalMoradorId)
     addLineWith(morador)
 }
 
 function tableMoradoresMout(moradores) {
-    moradores.forEach(mor => {
-        addLineWith(mor)
-    })
+    if(corpoTabelaMoradores){
+        moradores.forEach(mor => {
+            addLineWith(mor)
+        })
+    }
+}
+
+function findMorador(idMorador){
+    return moradores.find(mor => mor.id === parseInt(idMorador))
 }
 
 function deleteMoradorFromList(morador) {

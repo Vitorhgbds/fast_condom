@@ -1,15 +1,23 @@
 const corpoTabelaEntregas = document.getElementById('tabelaEntregas')
 
-let entregas = [
-    new Entrega("lalalaa", new Morador("Vitor","1112223332","A123"), new Operator ("Joao Pedro"), "26/10/2020", "27/10/2020")
-]
+let entregas = []
+
+entregas = JSON.parse(localStorage.getItem('entregas')) 
+                        || [new Entrega("lalalaa", findMorador(1),
+                             findOperator("J. M"), "26/10/2020", "27/10/2020")]
+
+localStorage.setItem('entregas',JSON.stringify(entregas))
+globalEntregaId = parseInt(localStorage.getItem('idEntregas') || '1')
 
 tableEntregasMout(entregas)
 
-function addEntrega(descricao, morador, operador,data_Saida, data_Entrega) {
-    
-        let entrega = new Entrega(descricao, morador, operador,data_Saida, data_Entrega)
+function addEntrega(data_Saida, descricao, siglaOperador, data_Entrega, idMorador) {
+        let entrega = new Entrega(descricao, findMorador(idMorador),
+                            findOperator(siglaOperador), data_Saida, data_Entrega)
         entregas.push(entrega)
+
+        localStorage.setItem('entregas',JSON.stringify(entregas))
+        localStorage.setItem('idEntregas',globalEntregaId)
         addLineWith(entrega)
 }
 
@@ -21,6 +29,7 @@ function tableEntregasMout(entregas) {
 
 function deleteEntregaFromList(entrega) {
     entregas = entregas.filter(ent => ent.id !== entrega.id)
+    localStorage.setItem('entregas',JSON.stringify(entregas))
 }
 
 function deleteEntrega(entregaLine, entrega) {
