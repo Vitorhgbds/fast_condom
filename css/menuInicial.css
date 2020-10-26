@@ -52,6 +52,31 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+/* datas final e inicial  */
+
+.datas {
+    font-size: small;
+    width: 100%;
+    height: auto;
+    letter-spacing: 2px;
+    font-family: 'calibri';
+    padding: 5%;
+    border-bottom: 2px solid #f3705a;
+    color: #848181;
+    font-weight: 700;
+}
+
+.num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: smaller;
+    color: #848181;
+    width: 100%;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 5%;
+}
+
 .descri {
     display: block;
     margin-top: 9px;
@@ -76,17 +101,39 @@
     width: auto;
     height: auto;
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     height: 60%;
 }
 
 .estruc {
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 50%;
+    display: inline-flex;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+.titleEs {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    display: inline-flex;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+input {
+    border: 1px solid #ccc;
+}
+
+input:active {
+    border: 1px solid #f3705a;
+}
+
+placeholder {
+    color: #ccc;
 }
 
 #menu {
@@ -110,20 +157,11 @@
     transition: 1s;
 }
 
-.sidebar a img {
-    font-size: 9px;
-    transition: .7s;
-}
-
-.containerChefe {
-    background: transparent;
-}
-
 .container {
     position: absolute;
     /* top: 60%; */
     /* left: 50%; */
-    height: 100%;
+    height: 80%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: rgb(192, 192, 192, 0.5);
@@ -132,7 +170,7 @@
 
 .button {
     width: auto;
-    height: auto;
+    height: 15%;
     color: #f3705a;
     border: 2px solid #f3705a;
     padding: 2%;
@@ -142,6 +180,7 @@
     padding-left: 10%;
     padding-right: 10%;
     transition: 1s;
+    background: transparent;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: center;
@@ -151,6 +190,16 @@
     background-color: #F3705A;
     color: #fff;
     transition: 1s;
+}
+
+.buttonEs {
+    top: 125%;
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    display: inline-flex;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .add {
@@ -189,7 +238,7 @@ thead th {
 }
 
 tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 tbody td {
@@ -203,7 +252,7 @@ tbody td:hover:before {
     right: 0;
     top: -9999px;
     bottom: -9999px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
     z-index: -1;
 }
 
