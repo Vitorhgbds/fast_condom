@@ -1,8 +1,6 @@
 const corpoTabelaOperadores = document.getElementById('tabelaOperadores')
 
-let operators = [
-    new Operator("Vitor Hugo"), new Operator("Mathias Kauf"), new Operator("Julia Mako")
-]
+let operators = []
 
 tableOperatorsMout(operators)
 
@@ -10,9 +8,31 @@ function addOperator(nome) {
     let operator = new Operator(nome)
     operators.push(operator)
     addLineWith(operator)
+
+
+
+    // Put the object into storage
+    if(!localStorage.getItem('operators')){
+        localStorage.setItem('operators', JSON.stringify(operators)); 
+    }else {
+        var operatorsJSON = localStorage.getItem('operators') 
+        operators = operators.push.apply(JSON.parse(operatorsJSON));
+    }
+
+    // Retrieve the object from storage
+    var retrievedObject = localStorage.getItem('operators'); 
+    console.log('retrievedObject: ', JSON.parse(retrievedObject)); 
 }
 
 function tableOperatorsMout(operators) {
+    
+    if(localStorage.getItem('operators')){
+        console.log(localStorage.getItem('operators'));
+        var operatorsJSON = localStorage.getItem('operators');
+        operators = JSON.parse(operatorsJSON);
+    } else{
+        operators = [new Operator("Vitor Hugo"), new Operator("Mathias Kauf"), new Operator("Julia Mako")]
+    }
     operators.forEach(ope => {
         addLineWith(ope)
     })
@@ -41,9 +61,10 @@ function addLineWith(operator){
     buttonDelete.className = "button"
     buttonDelete.addEventListener("click", () => deleteOperator(novaLinha, operator))
 
+    console.log("Operator: ",operator);
     novaColunaId.innerText = operator.id
     novaColunaNome.innerText = operator.nome
-    novaColunaSigla.innerText = operator.getIniciais();
+    //novaColunaSigla.innerText = operator.getIniciais();
 
     centralizando.append(buttonDelete)
     novaColunaDelete.append(centralizando)
