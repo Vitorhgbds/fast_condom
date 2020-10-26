@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Menu</title>
+    <!-- fonte nao mexa aqui  -->
+    <link rel="stylesheet" href="../css/menuInicial.css">
+</head>
+<body>
+    <!-- menu aqui nao mexer -->
+    <div class="sidebar">
+
+        <div class="titulo">Fast Condom</div>
+        <center>
+            <div class="descri">Algo sobre o sond aqui lalalalalal Algo sobre o sond aqui lalalalalal Algo sobre o sond aqui lalalalalal Algo sobre o sond aqui lalalalalal Algo sobre o sond aqui lalalalalal Algo sobre o sond aqui lalalalalal
+            </div>
+        </center>
+        <div id="menu">
+            <a href="">Entregas</a>
+            <a href="#">Funcionalidades</a>
+            <a href="index.html">Operador</a>
+            <a href="moradoresList.html">Moradores</a>
+
+        </div>
+    </div>
+    <!-- fim do menu -->
+
+    <!-- se quiser por titulo pra tabela poe aqui -->
+    <center>
+        <div class="estruc">
+            <div class="titleTable">
+                Tabela Moradores
+            </div>
+        </div>
+    </center>
+    
+    <!-- tabela aqui -->
+    <center>
+        <div class="containerChefe">
+            <div class="container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>RG</th>
+                            <th>Apartamento</th>
+                            <th>Opções</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaMoradores">
+                    </tbody>
+                </table>
+
+            </div>
+            <center>
+                <div class="add">
+                    <button style="padding: 5px 15px 5px 15px;
+            font-size: small;
+            font-family: 'Montserrat', sans-serif;" class="button"onclick="addMorador(prompt('Digite o nome'),prompt('Digite o RG'),prompt('Digite o numero do apartamento'))">Adicionar</button>
+                </div>
+            </center>
+
+        </div>
+    </center>
+    <!-- fecha tabela -->
+
+    <!-- botoes -->
+    <script src="../src/model/morador.js"></script>
+    <script src="../src/service/moradorService.js"></script>
+</body>
+
+
+</html>
