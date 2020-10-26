@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <!-- menu aqui nao mexer -->
     <div class="sidebar">
 
@@ -28,12 +29,36 @@
 
     <!-- se quiser por titulo pra tabela poe aqui -->
     <center>
-        <div class="estruc">
-            <div class="titleTable">
-                Tabela Operadores
-            </div>
+        <div class="titleEs">
+            <div class="titleTable">Um Titulo Aqui</div>
         </div>
+
+        <center>
+            <!-- iniico das datas -->
+            <div class="estruc">
+                <div class="dtInicial" style="padding-right: 20%;
+            margin-left: 0%;">
+                    <div class="datas">
+                        Data Inicial
+                    </div>
+                    <input placeholder="10/08/2020" class="num">
+                </div>
+                <div class="dtFinal" style="padding-left: 5%;">
+                    <div class="datas">
+                        Data Final
+                    </div>
+                    <input placeholder="10/08/2020" class="num">
+                </div>
+
+            </div>
+        </center>
+
+
+        <div class="buttonEs"><button style="padding-left:15%; padding-right:15%;" class="button">Buscar</button></div>
+
     </center>
+
+
 
     <!-- tabela aqui -->
     <center>
@@ -47,13 +72,19 @@
                             <th>Nome</th>
                             <th>Sigla</th>
                             <th>Opções</th>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Opções</th>
+                            <th>Opções</th>
                         </tr>
                     </thead>
                     <tbody id="tabelaOperadores">
-                    </tbody>
+                    </thead>
+                    <tbody id="tabelaOperadores">
                 </table>
 
             </div>
+
             <center>
                 <div class="add">
                     <button style="padding: 5px 15px 5px 15px;
@@ -61,7 +92,6 @@
             font-family: 'Montserrat', sans-serif;" class="button" onclick="addOperator(prompt('digite um nome'))">Adicionar</button>
                 </div>
             </center>
-
         </div>
     </center>
     <!-- fecha tabela -->
