@@ -48,6 +48,24 @@ function findOperator(sigla){
     return operadores.find(ope => ope.sigla === sigla)
 }
 
+function loadOperators(){
+    var corpoDropDown = document.getElementById('dropDownOperadores')
+    operadores.forEach(ope => {
+        var novaLinha = document.getElementById(ope.sigla)
+        if(novaLinha){
+            corpoDropDown.removeChild(novaLinha)
+        }
+    })
+
+    operadores.forEach(ope => {
+        var novaLinha = document.createElement('option')
+        novaLinha.value = ope.sigla
+        novaLinha.innerText = ope.nome
+        novaLinha.id = ope.sigla
+        corpoDropDown.append(novaLinha)
+    })
+}
+
 function addLineWith(operator){
     var novaLinha = document.createElement("tr")
     var novaColunaId = document.createElement("td")

@@ -45,6 +45,24 @@ function deleteMorador(moradorLine, morador) {
     corpoTabelaMoradores.removeChild(moradorLine)
 }
 
+function loadMoradores(){
+    var corpoDropDown = document.getElementById('dropDownMoradores')  
+    moradores.forEach(mor => {
+        var novaLinha = document.getElementById(mor.id)
+        if(novaLinha){
+            corpoDropDown.removeChild(novaLinha)
+        }
+    })
+    
+    moradores.forEach(mor => {
+        var novaLinha = document.createElement('option')
+        novaLinha.value = mor.id
+        novaLinha.innerText = mor.nome
+        novaLinha.id = mor.id
+        corpoDropDown.append(novaLinha)
+    })
+}
+
 function addLineWith(morador){
     var novaLinha = document.createElement("tr")
     var novaColunaNome = document.createElement("td")
