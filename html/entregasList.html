@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Menu</title>
+    <!-- fonte nao mexa aqui  -->
+    <link rel="stylesheet" href="../css/menuInicial.css">
+</head>
+
+<body>
+    <!-- menu aqui nao mexer -->
+    <div class="sidebar">
+
+        <div class="titulo">Fast Condom</div>
+        <center>
+            <div class="descri">O seu App de entregas
+            </div>
+        </center>
+        <div id="menu">
+            <a href="entregaList.html">Entregas</a>
+            <a href="#">Funcionalidades</a>
+            <a href="index.html">Operador</a>
+            <a href="moradoresList.html">Moradores</a>
+        </div>
+    </div>
+    <!-- fim do menu -->
+
+    <!-- se quiser por titulo pra tabela poe aqui -->
+    <center>
+        <div class="estruc">
+            <div class="titleTable">
+                Tabela de Entregas
+            </div>
+        </div>
+    </center>
+
+    <!-- tabela aqui -->
+    <center>
+        <div class="containerChefe">
+            <div class="container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Descrição</th>
+                            <th>Cliente</th>
+                            <th>Situação</th>
+                            <th>Opções</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaEntregas">
+                    </tbody>
+                </table>
+
+            </div>
+            <center>
+                <div class="add">
+                    <button style="padding: 5px 15px 5px 15px;
+            font-size: small;
+            font-family: 'Montserrat', sans-serif;" class="button"
+                        onclick="addOperator(prompt('Digite uma descrição'), prompt('Digite um Nome ou RG do cliente'))">Adicionar</button>
+                </div>
+            </center>
+
+        </div>
+    </center>
+    <!-- fecha tabela -->
+
+    <!-- botoes -->
+    <script src="../src/model/operator.js"></script>
+    <script src="../src/service/operatorService.js"></script>
+    <script src="../src/model/entrega.js"></script>
+    <script src="../src/service/entregaService.js"></script>
+</body>
+
+</html>
