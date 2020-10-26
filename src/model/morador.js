@@ -5,18 +5,6 @@ class Morador{
         this.nome = nome
         this.nroAp = nroAp
     } 
-    
-    getName(){
-        return this.nome
-    }
-
-    getRG(){
-        return this.RG
-    }
-
-    getNroAp(){
-        return this.nroAp
-    }
 
     setName(novoNome){
         this.nome = novoNome

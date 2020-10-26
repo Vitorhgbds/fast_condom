@@ -11,14 +11,17 @@
 }
 
 
-/* Sidebar > menu < top  */
+/* links do menu aqui  NOVO MENU NAO MEXER*/
 
+<<<<<<< HEAD
 
 /* e links estao aqui  */
 
 
 /* links do menu aqui  NOVO MENU NAO MEXER*/
 
+=======
+>>>>>>> origin/dev
 #custom_links {
     margin-left: 420px;
     font-size: 9px;
@@ -91,6 +94,7 @@
     left: 0px;
     background: #fff;
     z-index: 99999;
+<<<<<<< HEAD
 }
 
 #sidebar_line {
@@ -144,21 +148,37 @@
     color: #ccc;
     margin-top: -65px;
     font-weight: 100;
+=======
+>>>>>>> origin/dev
 }
 
-.titulo {
-    display: inline-block;
-    margin-top: 14px;
-    font-family: 'Roboto';
-    font-size: 20px;
-    color: #F3705A;
-    border-bottom: 2px solid rgb(218, 218, 218);
+#sidebar_line {
+    position: fixed;
+    top: 0px;
+    width: 300px;
+    opacity: 1;
+    border-right: 1px solid #ccc;
+    height: 100%;
+    left: 0px;
+    background: #555;
+    z-index: 999;
+}
+
+#sidebar_title {
     width: auto;
-    padding: 0 0 4px 0;
-    letter-spacing: 2px;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'muli', sans-serif;
+    color: #f2705a;
+    text-align: left;
+    height: 30px;
+    line-height: 15px;
+    font-size: 135%;
+    letter-spacing: 0px;
+    font-weight: 600;
+    position: absolute;
+    margin-left: 82px;
+    z-index: 99999;
     text-transform: uppercase;
+    margin-top: 23px;
 }
 
 .titleTable {
@@ -168,15 +188,43 @@
     height: auto;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 800;
+    /* font-weight: 800; */
     font-family: 'Montserrat', sans-serif;
 }
 
+<<<<<<< HEAD
+=======
+
+/* datas final e inicial  */
+
+.datas {
+    font-size: small;
+    width: 100%;
+    height: auto;
+    letter-spacing: 2px;
+    font-family: 'calibri';
+    padding: 5%;
+    border-bottom: 2px solid #f3705a;
+    color: #848181;
+    font-weight: 700;
+}
+
+.num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: smaller;
+    color: #848181;
+    width: 100%;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 5%;
+}
+
+>>>>>>> origin/dev
 .containerChefe {
     width: auto;
     height: auto;
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     height: 60%;
 }
@@ -185,19 +233,46 @@
     position: absolute;
     top: 25%;
     left: 50%;
+    display: inline-flex;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
+<<<<<<< HEAD
 .containerChefe {
     background: transparent;
+=======
+.titleEs {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    display: inline-flex;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+button:active {
+    border: none!important;
+}
+
+input {
+    border: 1px solid #ccc;
+}
+
+input:active {
+    border: 1px solid #f3705a;
+}
+
+placeholder {
+    color: #ccc;
+>>>>>>> origin/dev
 }
 
 .container {
     position: absolute;
     /* top: 60%; */
     /* left: 50%; */
-    height: 100%;
+    height: 80%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: rgb(192, 192, 192, 0.5);
@@ -206,7 +281,7 @@
 
 .button {
     width: auto;
-    height: auto;
+    height: 15%;
     color: #f3705a;
     border: 2px solid #f3705a;
     padding: 2%;
@@ -216,6 +291,7 @@
     padding-left: 10%;
     padding-right: 10%;
     transition: 1s;
+    background: transparent;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: center;
@@ -225,6 +301,16 @@
     background-color: #F3705A;
     color: #fff;
     transition: 1s;
+}
+
+.buttonEs {
+    top: 125%;
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    display: inline-flex;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .add {
@@ -288,7 +374,7 @@ thead th {
 }
 
 tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 tbody td {
@@ -302,7 +388,7 @@ tbody td:hover:before {
     right: 0;
     top: -9999px;
     bottom: -9999px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
     z-index: -1;
 }
 

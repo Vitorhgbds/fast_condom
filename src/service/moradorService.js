@@ -8,7 +8,10 @@ moradores = JSON.parse(localStorage.getItem('moradores'))
                             new Morador("Julia Almeida","1112223333","C41")]
 
 localStorage.setItem('moradores',JSON.stringify(moradores))
+<<<<<<< HEAD
 globalMoradorId  = parseInt(localStorage.getItem('idMoradores') || '3')
+=======
+>>>>>>> origin/dev
 
 
 
@@ -19,7 +22,10 @@ function addMorador(nome,RG,nroAp) {
     moradores.push(morador)
 
     localStorage.setItem('moradores',JSON.stringify(moradores))
+<<<<<<< HEAD
     localStorage.setItem('idMoradores',globalMoradorId)
+=======
+>>>>>>> origin/dev
     addLineWith(morador)
 }
 
