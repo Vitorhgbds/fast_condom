@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8" />
-        <title>Moradores</title>
-        <!-- fonte nao mexa aqui  -->
-        <link rel="stylesheet" href="../css/layout.css">
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>Moradores</title>
+    <!-- fonte nao mexa aqui  -->
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
 
-    <body>
+<body>
     <!-- menu aqui nao mexer -->
     <div id="header_line">
         <div id="sidebar_title">FAST CONDOM<br></div>
 
         <div id="custom_links">
             <a href="moradoresList.html"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
-            </br>Home</a>
+                </br>Home</a>
             <a href="entregasList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
                 </br>Entregas</a>
             <a href="funcionalidades.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
@@ -24,31 +24,32 @@
                 </br>Operador</a>
             <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
                 </br>Morador</a>
-            </div>
-
-            <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
-            <div id="sidebar_oper">Operador<br>
-                <div class="name">Mathias K.</div>
-            </div>
-
-            <!-- LOGIN FACA AQUI  -->
-            <div id="sidebar_login">
-                <a href="index.html" alt="Trocar usuário">Faça Login</a>
-            </div>
         </div>
 
-        <!-- fim do menu  -->
+        <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
+        <div id="sidebar_oper">Operador<br>
+            <div class="name">Mathias K.</div>
+        </div>
 
-        <center>
-            <div class="middle">
-                <a href="buscaEntregas.html" class="btn btn1" onclick="buscarEntregaDescricao(prompt('Digite a descrição que deseja buscar'))">Buscar Entregas por Descrição</a>
-                <a href="entregasNaoRetiradasList.html" class="btn btn1" >Listar Entregas não retiradas</a>
-                <a href="gerarRelatorio.html" class="btn btn1">Gerar Relatório</a>
-            </div>
-        </center>
+        <!-- LOGIN FACA AQUI  -->
+        <div id="sidebar_login">
+            <a href="index.html" alt="Trocar usuário">Faça Login</a>
+        </div>
+    </div>
 
-        <!-- botoes -->
-        <script src="../src/model/morador.js"></script>
-        <script src="../src/service/moradorService.js"></script>
-    </body>
+    <!-- fim do menu  -->
+
+    <center>
+        <div class="middle">
+            <a href="buscaEntregas.html" class="button btn btn1" onclick="buscarEntregaDescricao(prompt('Digite a descrição que deseja buscar'))">Buscar Entregas por Descrição</a>
+            <a href="entregasNaoRetiradasList.html" class="button btn btn1">Listar Entregas não retiradas</a>
+            <a href="gerarRelatorio.html" class="button btn btn1">Gerar Relatório</a>
+        </div>
+    </center>
+
+    <!-- botoes -->
+    <script src="../src/model/morador.js"></script>
+    <script src="../src/service/moradorService.js"></script>
+</body>
+
 </html>

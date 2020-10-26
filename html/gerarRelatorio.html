@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8" />
-        <title>Menu</title>
-        <!-- fonte nao mexa aqui  -->
-        <link rel="stylesheet" href="../css/layout.css">
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>Menu</title>
+    <!-- fonte nao mexa aqui  -->
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
 
-    <body>
+<body>
 
-        <!-- menu aqui nao mexer -->
+    <!-- menu aqui nao mexer -->
     <div id="header_line">
         <div id="sidebar_title">FAST CONDOM<br></div>
 
@@ -25,84 +25,85 @@
                 </br>Operador</a>
             <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
                 </br>Morador</a>
-            </div>
-
-            <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
-            <div id="sidebar_oper">Operador<br>
-                <div class="name">Mathias K.</div>
-            </div>
-
-            <!-- LOGIN FACA AQUI  -->
-            <div id="sidebar_login">
-                <a href="index.html" alt="Trocar usuário">Faça Login</a>
-            </div>
         </div>
 
-        <!-- fim do menu  -->
-        <!-- se quiser por titulo pra tabela poe aqui -->
-        <center>
-            <div class="titleEs">
-                <div class="titleTable">Um Titulo Aqui</div>
-            </div>
+        <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
+        <div id="sidebar_oper">Operador<br>
+            <div class="name">Mathias K.</div>
+        </div>
 
-            <center>
-                <!-- iniico das datas -->
-                <div class="estruc">
-                    <div class="dtInicial" style="padding-right: 20%;
+        <!-- LOGIN FACA AQUI  -->
+        <div id="sidebar_login">
+            <a href="index.html" alt="Trocar usuário">Faça Login</a>
+        </div>
+    </div>
+
+    <!-- fim do menu  -->
+    <!-- se quiser por titulo pra tabela poe aqui -->
+    <center>
+        <div class="titleEs">
+            <div class="titleTable">Um Titulo Aqui</div>
+        </div>
+
+        <center>
+            <!-- iniico das datas -->
+            <div class="estruc">
+                <div class="dtInicial" style="padding-right: 20%;
                 margin-left: 0%;">
-                        <div class="datas">
-                            Data Inicial
-                        </div>
-                        <input placeholder="10/08/2020" class="num">
+                    <div class="datas">
+                        Data Inicial
                     </div>
-                    <div class="dtFinal" style="padding-left: 5%;">
-                        <div class="datas">
-                            Data Final
-                        </div>
-                        <input placeholder="10/08/2020" class="num">
+                    <input type="date" placeholder="10/08/2020" class="num">
+                </div>
+                <div class="dtFinal" style="padding-left: 5%;">
+                    <div class="datas">
+                        Data Final
                     </div>
-
+                    <input type="date" placeholder="10/08/2020" class="num">
                 </div>
-            </center>
 
-
-            <div class="buttonEs"><button style="padding-left:15%; padding-right:15%;" class="button">Buscar</button></div>
-
-        </center>
-
-
-
-        <!-- tabela aqui -->
-        <center>
-            <div class="containerChefe">
-                <div class="container">
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Data/Hora</th>
-                                <th>Descrição</th>
-                                <th>Ap</th>
-                                <th>Operador</th>
-                                <th>Retirada</th>
-                                <th>Morador</th>
-                            </tr>
-                        </thead>
-                        <tbody id="">
-                    </table>
-
-                </div>
             </div>
         </center>
-        <!-- fecha tabela -->
 
-        <!-- botoes -->
-        <script src="../src/model/morador.js"></script>
-        <script src="../src/service/moradorService.js"></script>
-        <script src="../src/model/operator.js"></script>
-        <script src="../src/service/operatorService.js"></script>
-        <script src="../src/model/entrega.js"></script>
-        <script src="../src/service/entregaService.js"></script>
-    </body>
+
+        <div class="buttonEs"><button style="padding-left:30%; padding-right:30%;" class="button">Buscar</button></div>
+
+    </center>
+
+
+
+    <!-- tabela aqui -->
+    <center>
+        <div style="top:55%!important;" class="containerChefe">
+            <div class="container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Data/Hora</th>
+                            <th>Descrição</th>
+                            <th>Ap</th>
+                            <th>Operador</th>
+                            <th>Retirada</th>
+                            <th>Morador</th>
+                        </tr>
+                    </thead>
+                    <tbody id="">
+                </table>
+
+            </div>
+        </div>
+    </center>
+    <!-- fecha tabela -->
+
+    <!-- botoes -->
+    <script src="../src/model/morador.js"></script>
+    <script src="../src/service/moradorService.js"></script>
+    <script src="../src/model/operator.js"></script>
+    <script src="../src/service/operatorService.js"></script>
+    <script src="../src/model/entrega.js"></script>
+    <script src="../src/service/entregaService.js"></script>
+</body>
+
 </html>
