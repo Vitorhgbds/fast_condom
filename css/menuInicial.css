@@ -6,8 +6,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.body {  
-
+.body {
     overflow: auto;
 }
 
@@ -176,6 +175,15 @@
     margin-top: 23px;
 }
 
+.titleEs {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    display: inline-flex;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .titleTable {
     color: #f3705A;
     font-size: larger;
@@ -199,7 +207,7 @@
 .estruc {
     position: absolute;
     top: 25%;
-    left: 50%;
+    left: 46%;
     display: inline-flex;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -331,6 +339,43 @@ tbody td:hover:before {
     bottom: -9999px;
     background-color: rgba(255, 255, 255, 0.5);
     z-index: -1;
+}
+
+
+/* datas final e inicial  */
+
+.datas {
+    font-size: small;
+    width: 100%;
+    height: auto;
+    letter-spacing: 2px;
+    font-family: 'calibri';
+    padding: 5%;
+    border-bottom: 2px solid #f3705a;
+    color: #848181;
+    font-weight: 700;
+}
+
+.num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: smaller;
+    color: #848181;
+    width: 100%;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 5%;
+}
+
+.dtFinal input[type=date] {
+    border: 1px solid #ccc;
+    /* height: 10%; */
+    margin-top: 5px;
+}
+
+.dtInicial input[type=date] {
+    border: 1px solid #ccc;
+    /* height: 25%; */
+    margin-top: 5px;
 }
 
 
