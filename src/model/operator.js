@@ -8,6 +8,7 @@ class Operator{
         siglaNome.forEach(nome => {
             this.sigla = this.sigla + nome.charAt(0) + ""
         })
+        this.sigla = this.getIniciais()
     } 
 
     setName(novoNome){

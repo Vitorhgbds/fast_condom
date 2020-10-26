@@ -40,7 +40,7 @@ function addLineWith(operator) {
 
     novaColunaId.innerText = operator.id
     novaColunaNome.innerText = operator.nome
-    novaColunaSigla.innerText = operator.getIniciais();
+    novaColunaSigla.innerText = operator.sigla
 
     centralizando.append(buttonEntrar)
     novaColunaEntrar.append(centralizando)

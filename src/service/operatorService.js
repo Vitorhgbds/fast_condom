@@ -27,14 +27,17 @@ function addOperator(nome) {
 }
 
 function tableOperatorsMout(operators) {
-    operators.forEach(ope => {
-        addLineWith(ope)
-    })
+    operators = JSON.parse(localStorage.getItem('operadores'))
+    if(operators){
+        operators.forEach(ope => {
+            addLineWith(ope)
+        })
+    }
 }
 
 function deleteOperatorFromList(operator) {
-    operators = operators.filter(ope => ope.id !== operator.id)
-    localStorage.setItem('operadores', JSON.stringify(operators))
+    operadores = operadores.filter(ope => ope.id !== operator.id)
+    localStorage.setItem('operadores', JSON.stringify(operadores))
 }
 
 function deleteOperator(operatorLine, operator) {
@@ -63,7 +66,7 @@ function addLineWith(operator){
     console.log("Operator: ",operator);
     novaColunaId.innerText = operator.id
     novaColunaNome.innerText = operator.nome
-    novaColunaSigla.innerText = operator.getIniciais();
+    novaColunaSigla.innerText = operator.sigla
     centralizando.append(buttonDelete)
     novaColunaDelete.append(centralizando)
 
