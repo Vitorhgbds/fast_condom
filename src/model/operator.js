@@ -1,13 +1,14 @@
 let globalOperatorId = 0
 class Operator{
     constructor(nome){
-        this.id = globalId++
+        this.id = globalOperatorId++
         this.nome = nome
         var siglaNome = nome.split(" ")
         this.sigla = ""
         siglaNome.forEach(nome => {
             this.sigla = this.sigla + nome.charAt(0) + ""
         })
+        this.sigla = this.getIniciais()
     } 
 
     setName(novoNome){

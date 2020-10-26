@@ -1,71 +1,21 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8" />
-    <title>Menu</title>
+    <title>Logar</title>
     <!-- fonte nao mexa aqui  -->
     <link rel="stylesheet" href="../css/menuInicial.css">
 </head>
 
 <body>
-
-    <!-- menu aqui nao mexer -->
-    <div id="header_line">
-        <div id="sidebar_title">FAST CONDOM<br></div>
-
-        <div id="custom_links">
-            <a href="/"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
-                </br>Home</a>
-            <a href="#"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"><img></br>Contact</a>
-            <a href="#"><img src="../svg/contact.svg" style="width:20px; padding-bottom:1px;"></img>
-                </br>Entregas</a>
-            <a href="#"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
-                </br>Funcionalidades</a>
-            <a href="#"><img src="../svg/operador.svg" style="width:20px; padding-bottom:1px;"></img>
-                </br>Operador</a>
-            <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
-                </br>Moderador</a>
-        </div>
-    </div>
-
-    <!-- fim do menu -->
-
     <!-- se quiser por titulo pra tabela poe aqui -->
     <center>
-        <div class="titleEs">
-            <div class="titleTable">Um Titulo Aqui</div>
-        </div>
-
-        <center>
-            <!-- iniico das datas -->
-            <div class="estruc">
-                <div class="dtInicial" style="padding-right: 20%;
-            margin-left: 0%;">
-                    <div class="datas">
-                        Data Inicial
-
-                    </div>
-                    <br><input placeholder="10/08/2020" class="num">
-
-                </div>
-                <div class="dtFinal" style="padding-left: 5%;">
-                    <div class="datas">
-                        Data Final
-                    </div>
-                    <br>
-                    <input placeholder="10/08/2020" class="num">
-                </div>
-
+        <div class="estruc">
+            <div class="titleTable">
+                Entre com um usuário
             </div>
-        </center>
-
-
-        <div class="buttonEs"><button style="padding-left:30%; padding-right:30%;" class="button">Buscar</button></div>
-
+        </div>
     </center>
-
-
 
     <!-- tabela aqui -->
     <center>
@@ -79,34 +29,20 @@
                             <th>Nome</th>
                             <th>Sigla</th>
                             <th>Opções</th>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Opções</th>
-                            <th>Opções</th>
                         </tr>
                     </thead>
-                    <tbody id="tabelaOperadores">
-                        </thead>
-                        <tbody id="tabelaOperadores">
+                    <tbody id="tabelaOperadoresLogar">
+                    </tbody>
                 </table>
 
             </div>
-
-            <center>
-                <div class="add">
-                    <button style="padding: 5px 15px 5px 15px;
-            font-size: small;
-            font-family: 'Montserrat', sans-serif;" class="button" onclick="addOperator(prompt('digite um nome'))">Adicionar</button>
-                </div>
-            </center>
         </div>
     </center>
     <!-- fecha tabela -->
 
     <!-- botoes -->
     <script src="../src/model/operator.js"></script>
-    <script src="../src/service/operatorService.js"></script>
-    <script src="../src/service/app.js"></script>
+    <script src="../src/service/logarService.js"></script>
 </body>
 
 </html>

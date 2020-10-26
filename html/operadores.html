@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Entregas</title>
+    <title>Menu</title>
     <!-- fonte nao mexa aqui  -->
     <link rel="stylesheet" href="../css/menuInicial.css">
 </head>
 
 <body>
-   <!-- menu aqui nao mexer -->
-   <div id="header_line">
+<!-- menu aqui nao mexer -->
+<div id="header_line">
     <div id="sidebar_title">FAST CONDOM<br></div>
 
     <div id="custom_links">
@@ -25,25 +25,28 @@
             </br>Operador</a>
         <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
             </br>Morador</a>
-        </div>
-
-        <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
-        <div id="sidebar_oper">Operador<br>
-            <div class="name">Mathias K.</div>
-        </div>
-
-        <!-- LOGIN FACA AQUI  -->
-        <div id="sidebar_login">
-            <a href="index.html" alt="Trocar usuário">Faça Login</a>
-        </div>
     </div>
 
-    <!-- fim do menu  -->
+    <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
+    <div id="sidebar_oper">Operador<br>
+        <div class="name">Mathias K.</div>
+    </div>
+
+    <!-- LOGIN FACA AQUI  -->
+    <div id="sidebar_login">
+        <a href="index.html" alt="Trocar usuário">Faça Login</a>
+    </div>
+</div>
+
+<!-- fim do menu  -->
+
+
+
     <!-- se quiser por titulo pra tabela poe aqui -->
     <center>
         <div class="estruc">
             <div class="titleTable">
-                Tabela Moradores
+                Tabela Operadores
             </div>
         </div>
     </center>
@@ -56,14 +59,13 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Nome</th>
-                            <th>RG</th>
-                            <th>Apartamento</th>
+                            <th>Sigla</th>
                             <th>Opções</th>
-
                         </tr>
                     </thead>
-                    <tbody id="tabelaMoradores">
+                    <tbody id="tabelaOperadores">
                     </tbody>
                 </table>
 
@@ -72,19 +74,16 @@
                 <div class="add">
                     <button style="padding: 5px 15px 5px 15px;
             font-size: small;
-            font-family: 'Montserrat', sans-serif;" class="button" onclick="addMorador(prompt('Digite o nome'),prompt('Digite o RG'),prompt('Digite o numero do apartamento'))">Adicionar</button>
+            font-family: 'Montserrat', sans-serif;" class="button" onclick="addOperator(prompt('digite um nome'))">Adicionar</button>
                 </div>
             </center>
-
         </div>
     </center>
     <!-- fecha tabela -->
 
     <!-- botoes -->
-    <script src="../src/model/morador.js"></script>
-    <script src="../src/service/moradorService.js"></script>
-    <script src="../src/service/app.js"></script>
+    <script src="../src/model/operator.js"></script>
+    <script src="../src/service/operatorService.js"></script>
 </body>
-
 
 </html>
