@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Entregas</title>
+    <title>Moradores</title>
     <!-- fonte nao mexa aqui  -->
     <link rel="stylesheet" href="../css/layout.css">
 </head>
@@ -39,47 +39,17 @@
 
     <!-- fim do menu  -->
 
-    <!-- se quiser por titulo pra tabela poe aqui -->
     <center>
-        <div class="titleEs">
-            <div class="titleTable">Entregas</div>
+        <div class="middle">
+            <a href="buscaEntregas.html" class="button btn btn1" onclick="buscarEntregaDescricao(prompt('Digite a descrição que deseja buscar'))">Buscar Entregas por Descrição</a>
+            <a href="entregasNaoRetiradasList.html" class="button btn btn1">Listar Entregas não retiradas</a>
+            <a href="gerarRelatorio.html" class="button btn btn1">Gerar Relatório</a>
         </div>
+    </center>
 
-
-        <!-- tabela aqui -->
-        <center>
-            <div style="top:25%!important;" class="containerChefe">
-                <div class="container">
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Data saida</th>
-                                <th>Descrição</th>
-                                <th>Ap</th>
-                                <th>Operador</th>
-                                <th>Retirada</th>
-                                <th>Morador</th>
-
-                            </tr>
-                        </thead>
-                        <tbody id="">
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </center>
-        <!-- fecha tabela -->
-
-        <!-- botoes -->
-        <script src="../src/model/morador.js"></script>
-        <script src="../src/service/moradorService.js"></script>
-        <script src="../src/model/operator.js"></script>
-        <script src="../src/service/operatorService.js"></script>
-        <script src="../src/model/entrega.js"></script>
-        <script src="../src/service/entregaService.js"></script>
+    <!-- botoes -->
+    <script src="../src/model/morador.js"></script>
+    <script src="../src/service/moradorService.js"></script>
 </body>
 
 </html>
