@@ -74,55 +74,45 @@
 
                     <!-- botao para abrir o popUp -->
                     <div class="add">
-                        <button href="#?w=500" style="padding: 5px 15px 5px 15px;font-size: small;font-family: 'Montserrat', sans-serif;" class="open-button; button" onclick="openForm()">Adicionar</button>
+                        <button href="#?w=500" style="padding: 5px 15px 5px 15px;font-size: small;font-family: 'Montserrat', sans-serif;" class="open-button; button" onclick="openForm(); loadOperators(); loadMoradores()">Adicionar</button>
 
                     </div>
 
 
                     <center>
                         <!-- CONTEUDO DO POP UP AQUI  -->
-                        <div href="#?w=500" class="form-popup" id="myForm">
+                        <div href="#" class="form-popup" id="myForm">
                             <form action="/action_page.php" class="form-container">
                                 <h1>Login</h1>
 
                                 <label for="dataInicial"><b>Data Inicial</b></label><br>
-                                <input type="date" placeholder="19/08/2020" name="dataInicial" required>
+                                <input type="date" placeholder="19/08/2020" name="dataInicial" id="dataInicial" required>
                                 <br>
                                 <br>
                                 <label for="dataFinal"><b>Data Final</b></label><br>
-                                <input type="date" placeholder="10/08/2021" name="dataFinal" required>
+                                <input type="date" placeholder="10/08/2021" name="dataFinal" required id="dataFinal">
 
                                 <br>
                                 <br>
                                 <label for="descr"><b>Descrição</b></label><br>
-                                <input type="text" placeholder="Descrição" name="descri" required>
+                                <input type="text" placeholder="Descrição" name="descri" id="descricao" required>
 
                                 <br>
 
                                 <label for="operador"><b>Operadores</b></label>
-                                <select class="dropdown" placeholder="Escolha o nome" name="operadores" required>
-                                    <option value="#">Navegue</option>
-                                    <option value="#">Navegue</option>
-                                    <option value="#">Navegue</option>
-                                    <option value="#">Navegue</option>
-                                    <option value="#">Navegue</option>
+                                <select class="dropdown" placeholder="Escolha o nome" id="dropDownOperadores" name="operadores" required>
                                 </select>
 
 
                                 <label for="moradores"><b>Moradores</b></label>
-                                <select class="dropdown" placeholder="Escolha o nome" name="moradores" required>
-                                    <option value="#">Navegue</option>
-                                    <option value="#">Navegue</option>
-                                    <option value="#">Navegue</option>
-                                    <option value="#">Navegue</option>
-                                    <option value="#">Navegue</option>
+                                <select class="dropdown" placeholder="Escolha o nome" id="dropDownMoradores" name="moradores" required>
                                 </select>
 
 
 
                                 <center>
-                                    <button type="submit" class="btn button">Login</button>
-                                    <button type="button" class="btn cancel button" onclick="closeForm()">Close</button>
+                                    <button type="submit" class="btn button" onclick="addByForm(); closeForm()">Submit</button>
+                                    <button type="button" class="btn cancel button" onclick="closeForm();">Close</button>
                                 </center>
                             </form>
                         </div>

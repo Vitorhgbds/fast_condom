@@ -10,9 +10,9 @@ globalEntregaId = parseInt(localStorage.getItem('idEntregas') || '1')
 
 tableEntregasMout(entregas)
 
-function addEntrega(data_Saida, descricao, siglaOperador, data_Entrega, idMorador) {
-    let entrega = new Entrega(descricao, findMorador(idMorador),
-        findOperator(siglaOperador), data_Saida, data_Entrega)
+function addEntrega(data_Saida, descricao, operador, data_Entrega, morador) {
+    let entrega = new Entrega(descricao, findMorador(morador.id),
+        findOperator(operador.sigla), data_Saida, data_Entrega)
     entregas.push(entrega)
 
     localStorage.setItem('entregas', JSON.stringify(entregas))
@@ -84,6 +84,14 @@ function addLineWith(entrega) {
 ///////////// COISAS DO POP-UP COMEÇA AQUI CUIDADO 
 function openForm() {
     document.getElementById("myForm").style.display = "block";
+}
+
+function addByForm(){
+    addEntrega(document.getElementById('dataInicial').value,
+    document.getElementById('descricao').value,
+    document.getElementById('dropDownOperadores').value.sigla,
+    document.getElementById('dataFinal').value,
+    document.getElementById('dropDownMoradores').value)
 }
 
 function closeForm() {
