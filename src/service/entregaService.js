@@ -22,15 +22,12 @@ function addEntrega(data_Saida, descricao, siglaOperador, data_Entrega, idMorado
 }
 
 function searchByDescription(descricao){
-    console.log(descricao)
     var entregasDescricao = []
     entregas.forEach(ent => {
-        console.log(ent.descricao)
         if(ent.descricao.includes(descricao)){
             entregasDescricao.push(ent)
         }
     })
-    console.log(entregasDescricao)
     tableEntregasMout(entregasDescricao)
 }
 
@@ -41,7 +38,6 @@ function searchByNotEntregue(){
             notEntregue.push(ent)
         }
     })
-    console.log(notEntregue)
     tableEntregasMout(notEntregue)
 }
 
@@ -49,6 +45,22 @@ function tableEntregasMout(entregas) {
     entregas.forEach(ent => {
         addLineWith(ent)
     })
+}
+
+function searchByData(d1,d2){
+    let date1 = d1.split('/')
+    date_start = new Date(date1[2], date1[1] - 1, date1[0])
+    let date2 = d2.split('/')
+    date_end = new Date(date2[2], date2[1] - 1, date2[0])
+    var entregasDate = []
+        entregas.forEach(ent => {
+            let date3 = ent.data_Saida.split('/')
+            date = new Date(date3[2], date3[1] - 1, date3[0])
+            if(date>=date_start && date_end>=date){
+            entregasDate.push(ent)
+        }
+    })
+    tableEntregasMout(entregasDate)
 }
 
 function deleteEntregaFromList(entrega) {
