@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8" />
-        <title>Moradores</title>
-        <!-- fonte nao mexa aqui  -->
-        <link rel="stylesheet" href="../css/layout.css">
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>Moradores</title>
+    <!-- fonte nao mexa aqui  -->
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
 
-    <body>
+<body>
     <!-- menu aqui nao mexer -->
     <div id="header_line">
         <div id="sidebar_title">FAST CONDOM<br></div>
 
         <div id="custom_links">
             <a href="moradoresList.html"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
-            </br>Home</a>
+                </br>Home</a>
             <a href="entregasList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
                 </br>Entregas</a>
             <a href="funcionalidades.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
@@ -24,63 +24,64 @@
                 </br>Operador</a>
             <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
                 </br>Morador</a>
-            </div>
-
-            <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
-            <div id="sidebar_oper">Operador<br>
-                <div class="name">Mathias K.</div>
-            </div>
-
-            <!-- LOGIN FACA AQUI  -->
-            <div id="sidebar_login">
-                <a href="index.html" alt="Trocar usuário">Faça Login</a>
-            </div>
         </div>
 
-        <!-- fim do menu  -->
-        <!-- se quiser por titulo pra tabela poe aqui -->
-        <center>
-            <div class="estruc">
-                <div class="titleTable">
-                    Tabela Moradores
-                </div>
+        <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
+        <div id="sidebar_oper">Operador<br>
+            <div class="name">Mathias K.</div>
+        </div>
+
+        <!-- LOGIN FACA AQUI  -->
+        <div id="sidebar_login">
+            <a href="index.html" alt="Trocar usuário">Faça Login</a>
+        </div>
+    </div>
+
+    <!-- fim do menu  -->
+    <!-- se quiser por titulo pra tabela poe aqui -->
+    <center>
+        <div class="estruc">
+            <div class="titleTable">
+                Tabela Moradores
             </div>
-        </center>
+        </div>
+    </center>
 
-        <!-- tabela aqui -->
-        <center>
-            <div class="containerChefe">
-                <div class="container">
+    <!-- tabela aqui -->
+    <center>
+        <div style="top:45%!important;" class="containerChefe">
+            <div class="container">
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>RG</th>
-                                <th>Apartamento</th>
-                                <th>Opções</th>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>RG</th>
+                            <th>Apartamento</th>
+                            <th>Opções</th>
 
-                            </tr>
-                        </thead>
-                        <tbody id="tabelaMoradores">
-                        </tbody>
-                    </table>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaMoradores">
+                    </tbody>
+                </table>
 
-                </div>
-                <center>
-                    <div class="add">
-                        <button style="padding: 5px 15px 5px 15px;
+            </div>
+            <center>
+                <div class="add">
+                    <button style="padding: 5px 15px 5px 15px;
                 font-size: small;
                 font-family: 'Montserrat', sans-serif;" class="button" onclick="addMorador(prompt('Digite o nome'),prompt('Digite o RG'),prompt('Digite o numero do apartamento'))">Adicionar</button>
-                    </div>
-                </center>
+                </div>
+            </center>
 
-            </div>
-        </center>
-        <!-- fecha tabela -->
+        </div>
+    </center>
+    <!-- fecha tabela -->
 
-        <!-- botoes -->
-        <script src="../src/model/morador.js"></script>
-        <script src="../src/service/moradorService.js"></script>
-    </body>
+    <!-- botoes -->
+    <script src="../src/model/morador.js"></script>
+    <script src="../src/service/moradorService.js"></script>
+</body>
+
 </html>
