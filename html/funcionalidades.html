@@ -38,46 +38,14 @@
         </div>
 
         <!-- fim do menu  -->
-        <!-- se quiser por titulo pra tabela poe aqui -->
+
         <center>
-            <div class="estruc">
-                <div class="titleTable">
-                    Tabela Moradores
-                </div>
+            <div class="middle">
+                <a href="buscaEntregas.html" class="btn btn1" onclick="buscarEntregaDescricao(prompt('Digite a descrição que deseja buscar'))">Buscar Entregas por Descrição</a>
+                <a href="entregasNaoRetiradasList.html" class="btn btn1" >Listar Entregas não retiradas</a>
+                <a href="gerarRelatorio.html" class="btn btn1">Gerar Relatório</a>
             </div>
         </center>
-
-        <!-- tabela aqui -->
-        <center>
-            <div class="containerChefe">
-                <div class="container">
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>RG</th>
-                                <th>Apartamento</th>
-                                <th>Opções</th>
-
-                            </tr>
-                        </thead>
-                        <tbody id="tabelaMoradores">
-                        </tbody>
-                    </table>
-
-                </div>
-                <center>
-                    <div class="add">
-                        <button style="padding: 5px 15px 5px 15px;
-                font-size: small;
-                font-family: 'Montserrat', sans-serif;" class="button" onclick="addMorador(prompt('Digite o nome'),prompt('Digite o RG'),prompt('Digite o numero do apartamento'))">Adicionar</button>
-                    </div>
-                </center>
-
-            </div>
-        </center>
-        <!-- fecha tabela -->
 
         <!-- botoes -->
         <script src="../src/model/morador.js"></script>
