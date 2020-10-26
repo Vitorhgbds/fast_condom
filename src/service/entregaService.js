@@ -21,6 +21,19 @@ function addEntrega(data_Saida, descricao, siglaOperador, data_Entrega, idMorado
         addLineWith(entrega)
 }
 
+function searchByDescription(descricao){
+    console.log(descricao)
+    var entregasDescricao = []
+    entregas.forEach(ent => {
+        console.log(ent.descricao)
+        if(ent.descricao.includes(descricao)){
+            entregasDescricao.push(ent)
+        }
+    })
+    console.log(entregasDescricao)
+    tableEntregasMout(entregasDescricao)
+}
+
 function tableEntregasMout(entregas) {
     entregas.forEach(ent => {
         addLineWith(ent)
