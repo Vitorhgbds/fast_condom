@@ -9,8 +9,7 @@
 </head>
 
 <body>
-
-    <!-- menu aqui nao mexer -->
+        <!-- menu aqui nao mexer -->
    <div id="header_line">
     <div id="sidebar_title">FAST CONDOM<br></div>
 
@@ -18,7 +17,7 @@
         <a href="/"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
             </br>Home</a>
         <a href="#"><img src="../svg/contact.svg" style="width:20px; padding-bottom:1px;"><img></br>Contact</a>
-        <a href="entregasList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
+        <a href="entregaList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
             </br>Entregas</a>
         <a href="buscaEntregas.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
             </br>Funcionalidades</a>
@@ -40,38 +39,19 @@
     </div>
 
     <!-- fim do menu  -->
+
+    <div class="login">
+        <a href="login.html"><img src="../imagens/logar.png" alt="Trocar usuário"></a>
+    </div>
+
     <!-- se quiser por titulo pra tabela poe aqui -->
     <center>
-        <div class="titleEs">
-            <div class="titleTable">Um Titulo Aqui</div>
-        </div>
-
-        <center>
-            <!-- iniico das datas -->
-            <div class="estruc">
-                <div class="dtInicial" style="padding-right: 20%;
-            margin-left: 0%;">
-                    <div class="datas">
-                        Data Inicial
-                    </div>
-                    <input placeholder="10/08/2020" class="num">
-                </div>
-                <div class="dtFinal" style="padding-left: 5%;">
-                    <div class="datas">
-                        Data Final
-                    </div>
-                    <input placeholder="10/08/2020" class="num">
-                </div>
-
+        <div class="estruc">
+            <div class="titleTable">
+                Tabela Entregas
             </div>
-        </center>
-
-
-        <div class="buttonEs"><button style="padding-left:15%; padding-right:15%;" class="button">Buscar</button></div>
-
+        </div>
     </center>
-
-
 
     <!-- tabela aqui -->
     <center>
@@ -81,40 +61,35 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Sigla</th>
+                            <th>Data</th>
+                            <th>Hora</th>
+                            <th>Descrição</th>
+                            <th>Apartamento</th>
+                            <th>Operador</th>
                             <th>Opções</th>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Opções</th>
-                            <th>Opções</th>
+
                         </tr>
                     </thead>
-                    <tbody id="tabelaOperadores">
-                        </thead>
-                    <tbody id="tabelaOperadores">
+                    <tbody id="tabelaEntregas">
+                    </tbody>
                 </table>
 
             </div>
-
             <center>
                 <div class="add">
                     <button style="padding: 5px 15px 5px 15px;
-            font-size: small;
-            font-family: 'Montserrat', sans-serif;" class="button"
-                        onclick="addOperator(prompt('digite um nome'))">Adicionar</button>
+                font-size: small;
+                font-family: 'Montserrat', sans-serif;" class="button" onclick="addEntrega(prompt('Digite o data da entrega'),
+                prompt('Digite o hora da entrega'),prompt('Digite a descição da entrega'),
+                prompt('Digite o numero do apartamento'), prompt('Digite o nome operador que recebeu a entrega'))">Adicionar</button>
                 </div>
             </center>
+
         </div>
     </center>
     <!-- fecha tabela -->
 
     <!-- botoes -->
-    <script src="../src/model/morador.js"></script>
-    <script src="../src/service/moradorService.js"></script>
-    <script src="../src/model/operator.js"></script>
-    <script src="../src/service/operatorService.js"></script>
     <script src="../src/model/entrega.js"></script>
     <script src="../src/service/entregaService.js"></script>
 </body>

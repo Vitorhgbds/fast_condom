@@ -9,20 +9,20 @@ operadores = JSON.parse(localStorage.getItem('operadores'))
 
 globalOperatorId = parseInt(localStorage.getItem('idOperadores') || '2')
 
-localStorage.setItem('operadores',JSON.stringify(operadores))
-
+localStorage.setItem('operadores', JSON.stringify(operadores)) 
+localStorage.setItem('idOperadores', globalOperatorId)
 
 tableOperatorsMout(operadores)
 
 function addOperator(nome) {
     let operator = new Operator(nome)
-    operators.push(operator)
+    operadores.push(operator)
     addLineWith(operator)
 
-    localStorage.setItem('operators', JSON.stringify(operators)) 
+    localStorage.setItem('operadores', JSON.stringify(operadores)) 
     localStorage.setItem('idOperadores', globalOperatorId)
 
-    var retrievedObject = localStorage.getItem('operators'); 
+    var retrievedObject = localStorage.getItem('operadores'); 
     console.log('retrievedObject: ', JSON.parse(retrievedObject)); 
 }
 
@@ -35,8 +35,8 @@ function tableOperatorsMout(operators) {
 }
 
 function deleteOperatorFromList(operator) {
-    operators = operators.filter(ope => ope.id !== operator.id)
-    localStorage.setItem('operators', JSON.stringify(operators))
+    operadores = operadores.filter(ope => ope.id !== operator.id)
+    localStorage.setItem('operadores', JSON.stringify(operadores))
 }
 
 function deleteOperator(operatorLine, operator) {
@@ -45,7 +45,7 @@ function deleteOperator(operatorLine, operator) {
 }
 
 function findOperator(sigla){
-    return operadores.find(ope => ope.getIniciais() === sigla)
+    return operadores.find(ope => ope.sigla === sigla)
 }
 
 function addLineWith(operator){
@@ -65,8 +65,7 @@ function addLineWith(operator){
     console.log("Operator: ",operator);
     novaColunaId.innerText = operator.id
     novaColunaNome.innerText = operator.nome
-    novaColunaSigla.innerText = operator.getIniciais();
-
+    novaColunaSigla.innerText = operator.sigla
     centralizando.append(buttonDelete)
     novaColunaDelete.append(centralizando)
 
