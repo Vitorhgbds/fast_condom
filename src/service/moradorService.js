@@ -1,25 +1,43 @@
 const corpoTabelaMoradores = document.getElementById('tabelaMoradores')
 
-let moradores = [
-    new Morador("vitor","1112223331","B32"), new Morador("Mathias","1112223332","A123"), new Morador("julia","1112223333","C41")
-]
+let moradores = []
+
+moradores = JSON.parse(localStorage.getItem('moradores')) 
+                        || [new Morador("Josh Pereira","1112223331","B32"),
+                            new Morador("Sergio Alcantra","1112223332","A123"),
+                            new Morador("Julia Almeida","1112223333","C41")]
+
+localStorage.setItem('moradores',JSON.stringify(moradores))
+globalMoradorId  = parseInt(localStorage.getItem('idMoradores') || '3')
+
+
 
 tableMoradoresMout(moradores)
 
 function addMorador(nome,RG,nroAp) {
     let morador = new Morador(nome,RG,nroAp)
     moradores.push(morador)
+
+    localStorage.setItem('moradores',JSON.stringify(moradores))
+    localStorage.setItem('idMoradores',globalMoradorId)
     addLineWith(morador)
 }
 
 function tableMoradoresMout(moradores) {
-    moradores.forEach(mor => {
-        addLineWith(mor)
-    })
+    if(corpoTabelaMoradores){
+        moradores.forEach(mor => {
+            addLineWith(mor)
+        })
+    }
+}
+
+function findMorador(idMorador){
+    return moradores.find(mor => mor.id === parseInt(idMorador))
 }
 
 function deleteMoradorFromList(morador) {
-    moradores = moradores.filter(mor => mor.id !== mor.id)
+    moradores = moradores.filter(mor => mor.RG !== morador.RG)
+    localStorage.setItem('moradores',JSON.stringify(moradores))
 }
 
 function deleteMorador(moradorLine, morador) {
@@ -34,7 +52,7 @@ function addLineWith(morador){
     var novaColunaNroAp = document.createElement("td")
     var novaColunaDelete = document.createElement("td")
     var buttonDelete = document.createElement("button")
-    var centralizando = document.createElement("center");
+    var centralizando = document.createElement("center")
 
     buttonDelete.style = "padding-left:10%; padding-right:10%;"
     buttonDelete.innerText = "delete"
