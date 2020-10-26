@@ -152,26 +152,6 @@
     padding: 5%;
 }
 
-.descri {
-    display: block;
-    margin-top: 9px;
-    width: 450px;
-    text-align: center;
-    letter-spacing: .5px;
-    font-size: 9px;
-    text-transform: uppercase;
-    color: #848181;
-}
-
-.sidebar a {
-    display: inline-block;
-    margin-left: 3%;
-    transition: .7s;
-    padding-right: 1%;
-    text-decoration: none!important;
-    color: #696969;
-}
-
 .containerChefe {
     width: auto;
     height: auto;
@@ -213,27 +193,6 @@ input:active {
 
 placeholder {
     color: #ccc;
-}
-
-#menu {
-    height: auto;
-    padding: 2px;
-    padding-top: 1%;
-}
-
-#menu a {
-    height: 25px;
-    display: inline;
-    padding: 5px;
-    font-size: 15px;
-    color: #848181;
-    font-family: 'Source Sans Pro';
-}
-
-#menu a:hover {
-    color: #fff;
-    box-shadow: inset 150px 0 0 0 #F3705A;
-    transition: 1s;
 }
 
 .container {
