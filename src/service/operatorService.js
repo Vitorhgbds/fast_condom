@@ -1,15 +1,26 @@
 const corpoTabelaOperadores = document.getElementById('tabelaOperadores')
 
-let operators = [
-    new Operator("Vitor Hugo"), new Operator("Mathias Kauf"), new Operator("Julia Mako")
-]
+let operadores = [];
 
-tableOperatorsMout(operators)
+
+operadores = JSON.parse(localStorage.getItem('operadores')) 
+                        || [new Operator("Vitor Hugo"), new Operator("Julia Makowski"),
+                            new Operator("Lucas Bankow")]
+
+globalOperatorId = parseInt(localStorage.getItem('idOperadores') || '2')
+
+tableOperatorsMout(operadores)
 
 function addOperator(nome) {
     let operator = new Operator(nome)
     operators.push(operator)
     addLineWith(operator)
+
+    localStorage.setItem('operators', JSON.stringify(operators)) 
+    localStorage.setItem('idOperadores', globalOperatorId)
+
+    var retrievedObject = localStorage.getItem('operators'); 
+    console.log('retrievedObject: ', JSON.parse(retrievedObject)); 
 }
 
 function tableOperatorsMout(operators) {
@@ -20,11 +31,16 @@ function tableOperatorsMout(operators) {
 
 function deleteOperatorFromList(operator) {
     operators = operators.filter(ope => ope.id !== operator.id)
+    localStorage.setItem('operators', JSON.stringify(operators))
 }
 
 function deleteOperator(operatorLine, operator) {
     deleteOperatorFromList(operator)
     corpoTabelaOperadores.removeChild(operatorLine)
+}
+
+function findOperator(id){
+    return operadores.find(ope => ope.id === parseInt(id))
 }
 
 function addLineWith(operator){
@@ -41,6 +57,7 @@ function addLineWith(operator){
     buttonDelete.className = "button"
     buttonDelete.addEventListener("click", () => deleteOperator(novaLinha, operator))
 
+    console.log("Operator: ",operator);
     novaColunaId.innerText = operator.id
     novaColunaNome.innerText = operator.nome
     novaColunaSigla.innerText = operator.getIniciais();
