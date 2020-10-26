@@ -34,6 +34,17 @@ function searchByDescription(descricao){
     tableEntregasMout(entregasDescricao)
 }
 
+function searchByNotEntregue(){
+    var notEntregue = []
+    entregas.forEach(ent =>{
+        if(!ent.data_Entrega){
+            notEntregue.push(ent)
+        }
+    })
+    console.log(notEntregue)
+    tableEntregasMout(notEntregue)
+}
+
 function tableEntregasMout(entregas) {
     entregas.forEach(ent => {
         addLineWith(ent)
