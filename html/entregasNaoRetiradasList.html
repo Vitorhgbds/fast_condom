@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8" />
-        <title>Moradores</title>
+        <title>Entregas não Retiradas</title>
         <!-- fonte nao mexa aqui  -->
         <link rel="stylesheet" href="../css/layout.css">
     </head>
@@ -42,7 +42,7 @@
         <center>
             <div class="estruc">
                 <div class="titleTable">
-                    Tabela Moradores
+                    Lista de Entregas não retiradas
                 </div>
             </div>
         </center>
@@ -55,26 +55,21 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Nome</th>
-                                <th>RG</th>
-                                <th>Apartamento</th>
-                                <th>Opções</th>
+                                <th>ID</th>
+                                <th>Data saida</th>
+                                <th>Descrição</th>
+                                <th>Ap</th>
+                                <th>Operador</th>
+                                <th>Retirada</th>
+                                <th>Morador</th>
 
                             </tr>
                         </thead>
-                        <tbody id="tabelaMoradores">
+                        <tbody id="tabelaEntregas">
                         </tbody>
                     </table>
 
                 </div>
-                <center>
-                    <div class="add">
-                        <button style="padding: 5px 15px 5px 15px;
-                font-size: small;
-                font-family: 'Montserrat', sans-serif;" class="button" onclick="addMorador(prompt('Digite o nome'),prompt('Digite o RG'),prompt('Digite o numero do apartamento'))">Adicionar</button>
-                    </div>
-                </center>
-
             </div>
         </center>
         <!-- fecha tabela -->
