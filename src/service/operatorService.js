@@ -2,7 +2,6 @@ const corpoTabelaOperadores = document.getElementById('tabelaOperadores')
 
 let operadores = [];
 
-
 operadores = JSON.parse(localStorage.getItem('operadores')) 
                         || [new Operator("Vitor Hugo"), new Operator("Julia Makowski"),
                             new Operator("Lucas Bankow")]
