@@ -160,6 +160,26 @@
     padding: 15px 0px 17px 270px;
 }
 
+login{
+    display: block;
+}
+
+.login img{
+    width: 80px;
+    height: 50px;
+    margin-top: 9%;
+    margin-left: 93%;
+    cursor:pointer;
+}
+
+.login h3{
+    margin-top: -50px;
+    margin-left: 85%;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #F3705A;
+}
+
 table {
     width: 800px;
     border-collapse: collapse;
@@ -174,6 +194,7 @@ td {
     background-color: rgba(255, 255, 255, 0.2);
     color: #696969;
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 th {

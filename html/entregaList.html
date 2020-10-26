@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Menu</title>
+        <!-- fonte nao mexa aqui  -->
+        <link rel="stylesheet" href="../css/menuInicial.css">
+    </head>
+    <body>
+        <!-- menu aqui nao mexer -->
+        <div class="sidebar">
+
+            <div class="titulo">Fast Condom</div>
+            <center>
+                <div class="descri">
+                </div>
+            </center>
+            <div id="menu">
+                <a href="entrega.html">Entregas</a>
+                <a href="#">Funcionalidades</a>
+                <a href="home.html">Operador</a>
+                <a href="moradoresList.html">Moradores</a>
+
+            </div>
+        </div>
+        <!-- fim do menu -->
+
+        <div class="login">
+            <a href="index.html"><img src="../imagens/logar.png" alt="Trocar usuário"></a>
+        </div>
+
+        <!-- se quiser por titulo pra tabela poe aqui -->
+        <center>
+            <div class="estruc">
+                <div class="titleTable">
+                    Tabela Entregas
+                </div>
+            </div>
+        </center>
+        
+        <!-- tabela aqui -->
+        <center>
+            <div class="containerChefe">
+                <div class="container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Descrição</th>
+                                <th>Apartamento</th>
+                                <th>Operador</th>
+                                <th>Opções</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaEntregas">
+                        </tbody>
+                    </table>
+
+                </div>
+                <center>
+                    <div class="add">
+                        <button style="padding: 5px 15px 5px 15px;
+                font-size: small;
+                font-family: 'Montserrat', sans-serif;" 
+                class="button"onclick="addEntrega(prompt('Digite o data da entrega'),
+                prompt('Digite o hora da entrega'),prompt('Digite a descição da entrega'),
+                prompt('Digite o numero do apartamento'), prompt('Digite o nome operador que recebeu a entrega'))">Adicionar</button>
+                    </div>
+                </center>
+
+            </div>
+        </center>
+        <!-- fecha tabela -->
+
+        <!-- botoes -->
+        <script src="../src/model/entrega.js"></script>
+        <script src="../src/service/entregaService.js"></script>
+    </body>
+</html>
