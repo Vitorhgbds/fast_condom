@@ -56,7 +56,7 @@ function loadMoradores(){
     
     moradores.forEach(mor => {
         var novaLinha = document.createElement('option')
-        novaLinha.value = mor
+        novaLinha.value = mor.id
         novaLinha.innerText = mor.nome
         novaLinha.id = mor.id
         corpoDropDown.append(novaLinha)

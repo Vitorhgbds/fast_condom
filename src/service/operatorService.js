@@ -59,7 +59,7 @@ function loadOperators(){
 
     operadores.forEach(ope => {
         var novaLinha = document.createElement('option')
-        novaLinha.value = ope
+        novaLinha.value = ope.sigla
         novaLinha.innerText = ope.nome
         novaLinha.id = ope.sigla
         corpoDropDown.append(novaLinha)
