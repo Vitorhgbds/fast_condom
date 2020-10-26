@@ -1,16 +1,18 @@
 const corpoTabelaOperadoresLogar = document.getElementById('tabelaOperadoresLogar')
 
-let operators = [
-    new Operator("Vitor Hugo"), new Operator("Mathias Kauf"), new Operator("Julia Mako")
-]
+let operadores = [];
 
-tableOperatorsMout(operators)
 
-function addOperator(nome) {
-    let operator = new Operator(nome)
-    operators.push(operator)
-    addLineWith(operator)
-}
+operadores = JSON.parse(localStorage.getItem('operadores')) 
+                        || [new Operator("Vitor Hugo"), new Operator("Julia Makowski"),
+                            new Operator("Lucas Bankow")]
+
+globalOperatorId = parseInt(localStorage.getItem('idOperadores') || '2')
+
+    localStorage.setItem('operadores', JSON.stringify(operadores)) 
+    localStorage.setItem('idOperadores', globalOperatorId)
+
+tableOperatorsMout(operadores)
 
 function tableOperatorsMout(operators) {
     operators.forEach(ope => {

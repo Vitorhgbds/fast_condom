@@ -1,7 +1,7 @@
 let globalOperatorId = 0
 class Operator{
     constructor(nome){
-        this.id = globalId++
+        this.id = globalOperatorId++
         this.nome = nome
         var siglaNome = nome.split(" ")
         this.sigla = ""

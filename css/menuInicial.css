@@ -13,15 +13,12 @@
 
 /* links do menu aqui  NOVO MENU NAO MEXER*/
 
-<<<<<<< HEAD
 
 /* e links estao aqui  */
 
 
 /* links do menu aqui  NOVO MENU NAO MEXER*/
 
-=======
->>>>>>> origin/dev
 #custom_links {
     margin-left: 420px;
     font-size: 9px;
@@ -94,7 +91,6 @@
     left: 0px;
     background: #fff;
     z-index: 99999;
-<<<<<<< HEAD
 }
 
 #sidebar_line {
@@ -148,8 +144,6 @@
     color: #ccc;
     margin-top: -65px;
     font-weight: 100;
-=======
->>>>>>> origin/dev
 }
 
 #sidebar_line {
@@ -192,34 +186,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-<<<<<<< HEAD
-=======
-
-/* datas final e inicial  */
-
-.datas {
-    font-size: small;
-    width: 100%;
-    height: auto;
-    letter-spacing: 2px;
-    font-family: 'calibri';
-    padding: 5%;
-    border-bottom: 2px solid #f3705a;
-    color: #848181;
-    font-weight: 700;
-}
-
-.num {
-    font-family: 'Montserrat', sans-serif;
-    font-size: smaller;
-    color: #848181;
-    width: 100%;
-    letter-spacing: 2px;
-    text-align: center;
-    padding: 5%;
-}
-
->>>>>>> origin/dev
 .containerChefe {
     width: auto;
     height: auto;
@@ -238,34 +204,8 @@
     transform: translate(-50%, -50%);
 }
 
-<<<<<<< HEAD
 .containerChefe {
     background: transparent;
-=======
-.titleEs {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    display: inline-flex;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-button:active {
-    border: none!important;
-}
-
-input {
-    border: 1px solid #ccc;
-}
-
-input:active {
-    border: 1px solid #f3705a;
-}
-
-placeholder {
-    color: #ccc;
->>>>>>> origin/dev
 }
 
 .container {
