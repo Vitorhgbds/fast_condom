@@ -1,5 +1,3 @@
-// let operadores = [new Operator("Vitor Hugo"), new Operator("Julia Makowski"), new Operator("Lucas Bankow")];
-
 
 
 // operatorService.addOperator();

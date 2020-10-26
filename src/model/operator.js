@@ -1,4 +1,4 @@
-let globalId = 0
+let globalOperatorId = 0
 class Operator{
     constructor(nome){
         this.id = globalId++
@@ -9,14 +9,6 @@ class Operator{
             this.sigla = this.sigla + nome.charAt(0) + ""
         })
     } 
-    
-    getName(){
-        return this.nome
-    }
-
-    getId(){
-        return this.id
-    }
 
     setName(novoNome){
         this.nome = novoNome

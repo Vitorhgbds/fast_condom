@@ -1,38 +1,29 @@
 const corpoTabelaOperadores = document.getElementById('tabelaOperadores')
 
-let operators = []
+let operadores = [];
 
-tableOperatorsMout(operators)
+
+operadores = JSON.parse(localStorage.getItem('operadores')) 
+                        || [new Operator("Vitor Hugo"), new Operator("Julia Makowski"),
+                            new Operator("Lucas Bankow")]
+
+globalOperatorId = parseInt(localStorage.getItem('idOperadores') || '2')
+
+tableOperatorsMout(operadores)
 
 function addOperator(nome) {
     let operator = new Operator(nome)
     operators.push(operator)
     addLineWith(operator)
 
+    localStorage.setItem('operators', JSON.stringify(operators)) 
+    localStorage.setItem('idOperadores', globalOperatorId)
 
-
-    // Put the object into storage
-    if(!localStorage.getItem('operators')){
-        localStorage.setItem('operators', JSON.stringify(operators)); 
-    }else {
-        var operatorsJSON = localStorage.getItem('operators') 
-        operators = operators.push.apply(JSON.parse(operatorsJSON));
-    }
-
-    // Retrieve the object from storage
     var retrievedObject = localStorage.getItem('operators'); 
     console.log('retrievedObject: ', JSON.parse(retrievedObject)); 
 }
 
 function tableOperatorsMout(operators) {
-    
-    if(localStorage.getItem('operators')){
-        console.log(localStorage.getItem('operators'));
-        var operatorsJSON = localStorage.getItem('operators');
-        operators = JSON.parse(operatorsJSON);
-    } else{
-        operators = [new Operator("Vitor Hugo"), new Operator("Mathias Kauf"), new Operator("Julia Mako")]
-    }
     operators.forEach(ope => {
         addLineWith(ope)
     })
@@ -40,11 +31,16 @@ function tableOperatorsMout(operators) {
 
 function deleteOperatorFromList(operator) {
     operators = operators.filter(ope => ope.id !== operator.id)
+    localStorage.setItem('operators', JSON.stringify(operators))
 }
 
 function deleteOperator(operatorLine, operator) {
     deleteOperatorFromList(operator)
     corpoTabelaOperadores.removeChild(operatorLine)
+}
+
+function findOperator(id){
+    return operadores.find(ope => ope.id === parseInt(id))
 }
 
 function addLineWith(operator){
@@ -64,7 +60,7 @@ function addLineWith(operator){
     console.log("Operator: ",operator);
     novaColunaId.innerText = operator.id
     novaColunaNome.innerText = operator.nome
-    //novaColunaSigla.innerText = operator.getIniciais();
+    novaColunaSigla.innerText = operator.getIniciais();
 
     centralizando.append(buttonDelete)
     novaColunaDelete.append(centralizando)
