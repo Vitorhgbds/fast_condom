@@ -59,7 +59,7 @@ function addLineWith(entrega) {
     novaColunaData.innerText = entrega.data_Saida
     novaColunaDescricao.innerText = entrega.descricao
     novaColunaNroAp.innerText = entrega.morador.nroAp
-    novaColunaOperador.innerText = entrega.operador.getIniciais()
+    novaColunaOperador.innerText = entrega.operador.sigla
     novaColunaRetirada.innerText = entrega.data_Entrega
     novaColunaMorador.innerText = entrega.morador.nome
     novaColunaDelete
