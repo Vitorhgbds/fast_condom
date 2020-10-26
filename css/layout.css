@@ -66,10 +66,6 @@
     transition: all 0.4s ease-in-out;
 }
 
-.btn {
-    color: #f3705a;
-}
-
 #custom_links a:selected {
     border-bottom: 2px solid #f3705a;
     color: #f3705a;
@@ -179,15 +175,6 @@
     margin-top: 23px;
 }
 
-.titleEs {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    display: inline-flex;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
 .titleTable {
     color: #f3705A;
     font-size: larger;
@@ -225,7 +212,8 @@
     position: absolute;
     /* top: 60%; */
     /* left: 50%; */
-    height: 80%;
+    height: auto;
+    max-height: 80%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: rgb(192, 192, 192, 0.5);
@@ -236,24 +224,6 @@
     width: auto;
     height: 15%;
     color: #f3705a;
-    border: 2px solid #f3705a;
-    padding: 2%;
-    border-radius: 8px;
-    font-size: x-small;
-    font-weight: 800;
-    padding-left: 10%;
-    padding-right: 10%;
-    transition: 1s;
-    background: transparent;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.button a {
-    width: auto;
-    height: 15%;
-    color: #f3705a!important;
     border: 2px solid #f3705a;
     padding: 2%;
     border-radius: 8px;
@@ -363,9 +333,6 @@ tbody td:hover:before {
     z-index: -1;
 }
 
-
-/* datas final e inicial  */
-
 .datas {
     font-size: small;
     width: 100%;
@@ -400,6 +367,15 @@ tbody td:hover:before {
     margin-top: 5px;
 }
 
+.titleEs {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    display: inline-flex;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 
 /* Scrollbar rolagem da pagina */
 
@@ -431,4 +407,46 @@ tbody td:hover:before {
  ::-webkit-scrollbar-thumb:hover {
     background: #cccc;
     transition: 1s;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    position: relative;
+    display: block;
+    color: #696969;
+    font-size: 14px;
+    font-family: "montserrat";
+    text-decoration: none;
+    margin: 30px 0;
+    border: 2px solid #f3705a;
+    padding: 14px 60px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 1s all ease;
+}
+
+.btn::before {
+    background: #f3705a;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.6s ease;
+}
+
+.btn1::before {
+    width: 0%;
+    height: 100%;
+}
+
+.btn1:hover::before {
+    width: 100%;
 }

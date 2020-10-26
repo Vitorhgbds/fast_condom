@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8" />
-        <title>Moradores</title>
-        <!-- fonte nao mexa aqui  -->
-        <link rel="stylesheet" href="../css/layout.css">
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>Moradores</title>
+    <!-- fonte nao mexa aqui  -->
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
 
     <body>
 <!-- menu aqui nao mexer -->
@@ -14,9 +14,8 @@
     <div id="sidebar_title">FAST CONDOM<br></div>
 
     <div id="custom_links">
-        <a href="/"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
+        <a href="moradoresList.html"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
             </br>Home</a>
-        <a href="#"><img src="../svg/contact.svg" style="width:20px; padding-bottom:1px;"><img></br>Contact</a>
         <a href="entregasList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
             </br>Entregas</a>
         <a href="funcionalidades.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
@@ -47,42 +46,44 @@
                     Tabela Moradores
                 </div>
             </div>
-        </center>
+        </div>
+    </center>
 
-        <!-- tabela aqui -->
-        <center>
-            <div class="containerChefe">
-                <div class="container">
+    <!-- tabela aqui -->
+    <center>
+        <div style="top:45%!important;" class="containerChefe">
+            <div class="container">
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>RG</th>
-                                <th>Apartamento</th>
-                                <th>Opções</th>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>RG</th>
+                            <th>Apartamento</th>
+                            <th>Opções</th>
 
-                            </tr>
-                        </thead>
-                        <tbody id="tabelaMoradores">
-                        </tbody>
-                    </table>
-
-                </div>
-                <center>
-                    <div class="add">
-                        <button style="padding: 5px 15px 5px 15px;
-                font-size: small;
-                font-family: 'Montserrat', sans-serif;" class="button" onclick="addMorador(prompt('Digite o nome'),prompt('Digite o RG'),prompt('Digite o numero do apartamento'))">Adicionar</button>
-                    </div>
-                </center>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaMoradores">
+                    </tbody>
+                </table>
 
             </div>
-        </center>
-        <!-- fecha tabela -->
+            <center>
+                <div class="add">
+                    <button style="padding: 5px 15px 5px 15px;
+                font-size: small;
+                font-family: 'Montserrat', sans-serif;" class="button" onclick="addMorador(prompt('Digite o nome'),prompt('Digite o RG'),prompt('Digite o numero do apartamento'))">Adicionar</button>
+                </div>
+            </center>
 
-        <!-- botoes -->
-        <script src="../src/model/morador.js"></script>
-        <script src="../src/service/moradorService.js"></script>
-    </body>
+        </div>
+    </center>
+    <!-- fecha tabela -->
+
+    <!-- botoes -->
+    <script src="../src/model/morador.js"></script>
+    <script src="../src/service/moradorService.js"></script>
+</body>
+
 </html>
