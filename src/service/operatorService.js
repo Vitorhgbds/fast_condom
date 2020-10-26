@@ -7,7 +7,7 @@ operadores = JSON.parse(localStorage.getItem('operadores'))
                         || [new Operator("Vitor Hugo"), new Operator("Julia Makowski"),
                             new Operator("Lucas Bankow")]
 
-globalOperatorId = parseInt(localStorage.getItem('idOperadores') || '2')
+globalOperatorId = parseInt(localStorage.getItem('idOperadores') || '3')
 
 localStorage.setItem('operadores', JSON.stringify(operadores)) 
 localStorage.setItem('idOperadores', globalOperatorId)
