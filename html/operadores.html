@@ -10,25 +10,37 @@
 
 <body>
     <!-- menu aqui nao mexer -->
-    <div class="sidebar">
+    <div id="header_line">
+        <div id="sidebar_title">FAST CONDOM<br></div>
 
-        <div class="titulo">Fast Condom</div>
-        <center>
-            <div class="descri">
-            </div>
-        </center>
-        <div id="menu">
-            <a href="entregaList.html">Entregas</a>
-            <a href="#">Funcionalidades</a>
-            <a href="home.html">Operador</a>
-            <a href="moradoresList.html">Moradores</a>
+        <div id="custom_links">
+            <a href="login.html"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Home</a>
+            <a href="#"><img src="../svg/contact.svg" style="width:20px; padding-bottom:1px;"><img></br>Contact</a>
+            <a href="#"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Entregas</a>
+            <a href="index.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Funcionalidades</a>
+            <a href="#"><img src="../svg/operador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Operador</a>
+            <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Morador</a>
+        </div>
+
+        <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
+        <div id="sidebar_oper">Operador<br>
+            <div class="name">Mathias K.</div>
+        </div>
+
+        <!-- LOGIN FACA AQUI  -->
+        <div id="sidebar_login">
+            <a href="login.html" alt="Trocar usuário">Faça Login</a>
         </div>
     </div>
-    <!-- fim do menu -->
 
-    <div class="login">
-        <a href="index.html"><img src="../imagens/logar.png" alt="Trocar usuário"></a>
-     </div>
+    <!-- fim do menu  -->
+
+
 
     <!-- se quiser por titulo pra tabela poe aqui -->
     <center>
@@ -73,4 +85,5 @@
     <script src="../src/model/operator.js"></script>
     <script src="../src/service/operatorService.js"></script>
 </body>
+
 </html>

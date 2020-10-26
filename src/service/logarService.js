@@ -19,10 +19,10 @@ function tableOperatorsMout(operators) {
 }
 
 function tableRedirect(sigla) {
-    location.href=" home.html"
+    location.href = "operadores.html"
 }
 
-function addLineWith(operator){
+function addLineWith(operator) {
     var novaLinha = document.createElement("tr")
     var novaColunaId = document.createElement("td")
     var novaColunaNome = document.createElement("td")
@@ -50,4 +50,3 @@ function addLineWith(operator){
 
     corpoTabelaOperadoresLogar.append(novaLinha)
 }
-

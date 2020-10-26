@@ -7,28 +7,32 @@
     <!-- fonte nao mexa aqui  -->
     <link rel="stylesheet" href="../css/menuInicial.css">
 </head>
+
 <body>
     <!-- menu aqui nao mexer -->
-    <div class="sidebar">
+    <div id="header_line">
+        <div id="sidebar_title">FAST CONDOM<br></div>
 
-        <div class="titulo">Fast Condom</div>
-        <center>
-            <div class="descri">
-            </div>
-        </center>
-        <div id="menu">
-            <a href="entregaList.html">Entregas</a>
-            <a href="#">Funcionalidades</a>
-            <a href="home.html">Operador</a>
-            <a href="moradoresList.html">Moradores</a>
-
+        <div id="custom_links">
+            <a href="login.html"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Home</a>
+            <a href="#"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"><img></br>Contact</a>
+            <a href="#"><img src="../svg/contact.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Entregas</a>
+            <a href="index.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Funcionalidades</a>
+            <a href="#"><img src="../svg/operador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Operador</a>
+            <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Morador</a>
         </div>
     </div>
-    <!-- fim do menu -->
+
+    <!-- fim do menu  -->
 
     <div class="login">
-        <a href="index.html"><img src="../imagens/logar.png" alt="Trocar usuário"></a>
-     </div>
+        <a href="login.html"><img src="../imagens/logar.png" alt="Trocar usuário"></a>
+    </div>
 
     <!-- se quiser por titulo pra tabela poe aqui -->
     <center>
@@ -38,7 +42,7 @@
             </div>
         </div>
     </center>
-    
+
     <!-- tabela aqui -->
     <center>
         <div class="containerChefe">
@@ -63,7 +67,7 @@
                 <div class="add">
                     <button style="padding: 5px 15px 5px 15px;
             font-size: small;
-            font-family: 'Montserrat', sans-serif;" class="button"onclick="addMorador(prompt('Digite o nome'),prompt('Digite o RG'),prompt('Digite o numero do apartamento'))">Adicionar</button>
+            font-family: 'Montserrat', sans-serif;" class="button" onclick="addMorador(prompt('Digite o nome'),prompt('Digite o RG'),prompt('Digite o numero do apartamento'))">Adicionar</button>
                 </div>
             </center>
 
