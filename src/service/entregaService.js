@@ -1,4 +1,4 @@
-const corpoTabelaEntregas = document.getElementById('tabelaEntregas')
+let corpoTabelaEntregas = document.getElementById('tabelaEntregas')
 const operadorMenuEntrega = document.getElementById('nomeOperadorAtual')
 
 let entregas = []
@@ -31,24 +31,65 @@ function addEntrega(data_Saida, descricao, operadorSigla, data_Entrega, moradorI
     addLineWith(entrega)
 }
 
-function searchByDescription(descricao){
+function searchByDescription(descricao) {
+    const tableEntregas = document.getElementById('table')
+    tableEntregas.removeChild(corpoTabelaEntregas)
+    corpoTabelaEntregas = document.createElement('tbody')
+    corpoTabelaEntregas.id = "tabelaEntregas"
+    tableEntregas.append(corpoTabelaEntregas)
     var entregasDescricao = []
     entregas.forEach(ent => {
-        if(ent.descricao.includes(descricao)){
+        if (ent.descricao.includes(descricao)) {
             entregasDescricao.push(ent)
         }
     })
+
     tableEntregasMout(entregasDescricao)
 }
 
-function searchByNotEntregue(){
+function searchByNotEntregue() {
     var notEntregue = []
-    entregas.forEach(ent =>{
-        if(!ent.data_Entrega){
+    entregas.forEach(ent => {
+        if (!ent.data_Entrega) {
             notEntregue.push(ent)
         }
     })
-    tableEntregasMout(notEntregue)
+    mountNotEntregue(notEntregue)
+}
+
+function mountNotEntregue(notEntregues) {
+    const tableEntregas = document.getElementById('table')
+    tableEntregas.removeChild(corpoTabelaEntregas)
+    corpoTabelaEntregas = document.createElement('tbody')
+    corpoTabelaEntregas.id = "tabelaEntregas"
+    tableEntregas.append(corpoTabelaEntregas)
+
+    notEntregues.forEach(ent => {
+        var novaLinha = document.createElement("tr")
+        var novaColunaId = document.createElement("td")
+        var novaColunaData = document.createElement("td")
+        var novaColunaDescricao = document.createElement("td")
+        var novaColunaNroAp = document.createElement("td")
+        var novaColunaOperador = document.createElement("td")
+        var novaColunaRetirada = document.createElement("td")
+        var novaColunaMorador = document.createElement("td")
+        var buttonRegistrar = document.createElement("button")
+        var centralizando = document.createElement("center");
+
+        novaColunaId.innerText = ent.id
+        novaColunaData.innerText = ent.data_Saida
+        novaColunaDescricao.innerText = ent.descricao
+
+        
+        buttonRegistrar.style = "padding-left:10%; padding-right:10%;"
+        buttonRegistrar.innerText = "Registro"
+        buttonRegistrar.addEventListener("click", () => {
+            openFormFun()
+        })
+
+        
+        centralizando.append(buttonRegistrar)
+    })
 }
 
 function tableEntregasMout(entregas) {
@@ -57,16 +98,16 @@ function tableEntregasMout(entregas) {
     })
 }
 
-function searchByData(d1,d2){
+function searchByData(d1, d2) {
     let date1 = d1.split('/')
     date_start = new Date(date1[2], date1[1] - 1, date1[0])
     let date2 = d2.split('/')
     date_end = new Date(date2[2], date2[1] - 1, date2[0])
     var entregasDate = []
-        entregas.forEach(ent => {
-            let date3 = ent.data_Saida.split('/')
-            date = new Date(date3[2], date3[1] - 1, date3[0])
-            if(date>=date_start && date_end>=date){
+    entregas.forEach(ent => {
+        let date3 = ent.data_Saida.split('/')
+        date = new Date(date3[2], date3[1] - 1, date3[0])
+        if (date >= date_start && date_end >= date) {
             entregasDate.push(ent)
         }
     })
@@ -134,5 +175,14 @@ function openForm() {
 }
 
 function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+///// segundo pop 
+function openFormFun(entrega) {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeFormFun() {
     document.getElementById("myForm").style.display = "none";
 }

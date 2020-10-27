@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8" />
-        <title>Entregas não Retiradas</title>
-        <!-- fonte nao mexa aqui  -->
-        <link rel="stylesheet" href="../css/layout.css">
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>Entregas não Retiradas</title>
+    <!-- fonte nao mexa aqui  -->
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
 
-    <body>
-        <!-- menu aqui nao mexer -->
+<body>
+    <!-- menu aqui nao mexer -->
     <div id="header_line">
         <div id="sidebar_title">FAST CONDOM<br></div>
 
@@ -39,44 +39,89 @@
 
     <!-- fim do menu  -->
 
-        <!-- se quiser por titulo pra tabela poe aqui -->
-        <center>
-            <div class="estruc">
-                <div class="titleTable">
-                    Lista de Entregas não retiradas
-                </div>
+    <!-- se quiser por titulo pra tabela poe aqui -->
+    <center>
+        <div class="estruc">
+            <div class="titleTable">
+                Lista de Entregas não retiradas
             </div>
-        </center>
+        </div>
+    </center>
 
-        <!-- tabela aqui -->
-        <center>
-            <div class="containerChefe">
-                <div class="container">
+    <center>
+        <div class="buttonEs"><button style="padding-left:30%; padding-right:30%; margin-top:65%;" class="button" onclick="searchByNotEntregue()">Buscar</button></div>
+    </center>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Data saida</th>
-                                <th>Descrição</th>
-                                <th>Ap</th>
-                                <th>Operador</th>
-                                <th>Retirada</th>
-                                <th>Morador</th>
 
-                            </tr>
-                        </thead>
-                        <tbody id="tabelaEntregas">
-                        </tbody>
-                    </table>
+    <!-- botao para abrir o popUp -->
+    <div style="top:70%!important;" class="add">
+        aaaaaaaaaaaaaaaaa<button href="#?w=500" style="padding: 5px 15px 5px 15px;font-size: small;font-family: 'Montserrat', sans-serif;" class="open-buttonFunct; button" onclick="openFormFun();loadMoradores()">Adicionar</button>
 
-                </div>
+    </div>
+
+    <center>
+        <!-- CONTEUDO DO POP UP AQUI  -->
+        <div href="#" class="form-popupFunct" id="myForm">
+            <form class="form-containerFunct">
+                <h1>Login</h1>
+
+                <label for="dataRetirada"><b>Data Retirada</b></label><br>
+                <input type="date" placeholder="19/08/2020" name="dataRetirada" id="dataRetirada" required>
+                <br>
+                <br>
+                <label for="moradores"><b>Moradores</b></label>
+                <select class="dropdownFunct" placeholder="Escolha o nome" id="dropDownMoradores" name="moradores" required>
+                                </select>
+
+
+
+                <center>
+                    <button type="submit" class="btn button" onclick="addEntrega(document.getElementById('dataInicial').value,
+                                                                                                document.getElementById('descricao').value,
+                                                                                                document.getElementById('dropDownOperadores').value,
+                                                                                                document.getElementById('dataFinal').value,
+                                                                                                document.getElementById('dropDownMoradores').value); 
+                                                                                                closeFormFun();">Submit</button>
+                    <button type="button" class="btn cancel button" onclick="closeFormFun();">Close</button>
+                </center>
+            </form>
+        </div>
+    </center>
+
+    <!-- tabela aqui -->
+    <center>
+
+
+        <div class="containerChefe">
+            <div class="container">
+
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Data saida</th>
+                            <th>Descrição</th>
+                            <th>Ap</th>
+                            <th>Operador</th>
+                            <th>Retirada</th>
+                            <th>Morador</th>
+                            <th>Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaEntregas">
+                    </tbody>
+                </table>
+
             </div>
-        </center>
-        <!-- fecha tabela -->
+        </div>
+    </center>
+    <!-- fecha tabela -->
 
-        <!-- botoes -->
-        <script src="../src/model/morador.js"></script>
-        <script src="../src/service/moradorService.js"></script>
-    </body>
+    <!-- botoes -->
+    <script src="../src/model/morador.js"></script>
+    <script src="../src/service/moradorService.js"></script>
+    <script src="../src/model/entrega.js"></script>
+    <script src="../src/service/entregaService.js"></script>
+</body>
+
 </html>
