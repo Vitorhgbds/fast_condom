@@ -289,7 +289,7 @@ h1 {
 
 .titleEs {
     position: absolute;
-    top: 15%;
+    margin-top: 15%;
     left: 50%;
     display: inline-flex;
     -webkit-transform: translate(-50%, -50%);
