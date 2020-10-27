@@ -1,4 +1,5 @@
 const corpoTabelaOperadores = document.getElementById('tabelaOperadores')
+const operadorMenu = document.getElementById('nomeOperadorAtual')
 
 let operadores = [];
 
@@ -10,6 +11,10 @@ globalOperatorId = parseInt(localStorage.getItem('idOperadores') || '3')
 
 localStorage.setItem('operadores', JSON.stringify(operadores)) 
 localStorage.setItem('idOperadores', globalOperatorId)
+
+let operadorAtual = JSON.parse(localStorage.getItem('loginOperador'))
+operadorMenu.innerText = operadorAtual.sigla
+
 
 tableOperatorsMout(operadores)
 
