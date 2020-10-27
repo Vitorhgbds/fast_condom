@@ -31,7 +31,7 @@ function addEntrega(data_Saida, descricao, operadorSigla, data_Entrega, moradorI
     addLineWith(entrega)
 }
 
-function searchByDescription(descricao){
+function searchByDescription(descricao) {
     const tableEntregas = document.getElementById('table')
     tableEntregas.removeChild(corpoTabelaEntregas)
     corpoTabelaEntregas = document.createElement('tbody')
@@ -39,7 +39,7 @@ function searchByDescription(descricao){
     tableEntregas.append(corpoTabelaEntregas)
     var entregasDescricao = []
     entregas.forEach(ent => {
-        if(ent.descricao.includes(descricao)){
+        if (ent.descricao.includes(descricao)) {
             entregasDescricao.push(ent)
         }
     })
@@ -47,17 +47,17 @@ function searchByDescription(descricao){
     tableEntregasMout(entregasDescricao)
 }
 
-function searchByNotEntregue(){
+function searchByNotEntregue() {
     var notEntregue = []
-    entregas.forEach(ent =>{
-        if(!ent.data_Entrega){
+    entregas.forEach(ent => {
+        if (!ent.data_Entrega) {
             notEntregue.push(ent)
         }
     })
     mountNotEntregue(notEntregue)
 }
 
-function mountNotEntregue(notEntregues){
+function mountNotEntregue(notEntregues) {
     const tableEntregas = document.getElementById('table')
     tableEntregas.removeChild(corpoTabelaEntregas)
     corpoTabelaEntregas = document.createElement('tbody')
@@ -94,16 +94,16 @@ function tableEntregasMout(entregas) {
     })
 }
 
-function searchByData(d1,d2){
+function searchByData(d1, d2) {
     let date1 = d1.split('/')
     date_start = new Date(date1[2], date1[1] - 1, date1[0])
     let date2 = d2.split('/')
     date_end = new Date(date2[2], date2[1] - 1, date2[0])
     var entregasDate = []
-        entregas.forEach(ent => {
-            let date3 = ent.data_Saida.split('/')
-            date = new Date(date3[2], date3[1] - 1, date3[0])
-            if(date>=date_start && date_end>=date){
+    entregas.forEach(ent => {
+        let date3 = ent.data_Saida.split('/')
+        date = new Date(date3[2], date3[1] - 1, date3[0])
+        if (date >= date_start && date_end >= date) {
             entregasDate.push(ent)
         }
     })
@@ -171,5 +171,14 @@ function openForm() {
 }
 
 function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+///// segundo pop 
+function openFormFun() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeFormFun() {
     document.getElementById("myForm").style.display = "none";
 }
