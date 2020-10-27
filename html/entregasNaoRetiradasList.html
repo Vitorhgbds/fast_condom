@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Entregas não Retiradas</title>
+        <!-- fonte nao mexa aqui  -->
+        <link rel="stylesheet" href="../css/layout.css">
+    </head>
+
+    <body>
+        <!-- menu aqui nao mexer -->
+    <div id="header_line">
+        <div id="sidebar_title">FAST CONDOM<br></div>
+
+        <div id="custom_links">
+            <a href="moradoresList.html"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Home</a>
+            <a href="entregasList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Entregas</a>
+            <a href="funcionalidades.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Funcionalidades</a>
+            <a href="operadores.html"><img src="../svg/operador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Operador</a>
+            <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Morador</a>
+        </div>
+
+        <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
+        <div id="sidebar_oper">Operador<br>
+            <div class="name" id="nomeOperadorAtual">Mathias K.</div>
+        </div>
+
+        <!-- LOGIN FACA AQUI  -->
+        <div id="sidebar_login">
+            <a href="index.html" alt="Trocar usuário">Faça Login</a>
+        </div>
+    </div>
+
+    <!-- fim do menu  -->
+
+        <!-- se quiser por titulo pra tabela poe aqui -->
+        <center>
+            <div class="estruc">
+                <div class="titleTable">
+                    Lista de Entregas não retiradas
+                </div>
+            </div>
+        </center>
+
+        <!-- tabela aqui -->
+        <center>
+            <div class="containerChefe">
+                <div class="container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Data saida</th>
+                                <th>Descrição</th>
+                                <th>Ap</th>
+                                <th>Operador</th>
+                                <th>Retirada</th>
+                                <th>Morador</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaEntregas">
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </center>
+        <!-- fecha tabela -->
+
+        <!-- botoes -->
+        <script src="../src/model/morador.js"></script>
+        <script src="../src/service/moradorService.js"></script>
+    </body>
+</html>

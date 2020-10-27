@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Menu</title>
+    <!-- fonte nao mexa aqui  -->
+    <link rel="stylesheet" href="../css/menuInicial.css">
+</head>
+
+<body>
+    <!-- menu aqui nao mexer -->
+    <div id="header_line">
+        <div id="sidebar_title">FAST CONDOM<br></div>
+
+        <div id="custom_links">
+            <a href="moradoresList.html"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Home</a>
+            <a href="entregasList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Entregas</a>
+            <a href="funcionalidades.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Funcionalidades</a>
+            <a href="operadores.html"><img src="../svg/operador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Operador</a>
+            <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Morador</a>
+        </div>
+
+        <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
+        <div id="sidebar_oper">Operador<br>
+            <div class="name" id="nomeOperadorAtual">Mathias K.</div>
+        </div>
+
+        <!-- LOGIN FACA AQUI  -->
+        <div id="sidebar_login">
+            <a href="index.html" alt="Trocar usuário">Faça Login</a>
+        </div>
+    </div>
+
+    <!-- fim do menu  -->
+
+    <!-- se quiser por titulo pra tabela poe aqui -->
+    <center>
+        <div class="titleEs">
+            <div class="titleTable">Entregas</div>
+        </div>
+
+
+        <!-- tabela aqui -->
+        <center>
+            <div class="containerChefe">
+                <div class="container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Data saida</th>
+                                <th>Descrição</th>
+                                <th>Ap</th>
+                                <th>Operador</th>
+                                <th>Retirada</th>
+                                <th>Morador</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaEntregas">
+                        </tbody>
+                    </table>
+
+                </div>
+                <center>
+
+                    <!-- botao para abrir o popUp -->
+                    <div class="add">
+                        <button href="#?w=500" style="padding: 5px 15px 5px 15px;font-size: small;font-family: 'Montserrat', sans-serif;" class="open-button; button" onclick="openForm(); loadOperators(); loadMoradores()">Adicionar</button>
+
+                    </div>
+
+
+                    <center>
+                        <!-- CONTEUDO DO POP UP AQUI  -->
+                        <div href="#" class="form-popup" id="myForm">
+                            <form class="form-container">
+                                <h1>Login</h1>
+
+                                <label for="dataInicial"><b>Data Inicial</b></label><br>
+                                <input type="date" placeholder="19/08/2020" name="dataInicial" id="dataInicial" required>
+                                <br>
+                                <br>
+                                <label for="dataFinal"><b>Data Final</b></label><br>
+                                <input type="date" placeholder="10/08/2021" name="dataFinal" required id="dataFinal">
+
+                                <br>
+                                <br>
+                                <label for="descr"><b>Descrição</b></label><br>
+                                <input type="text" placeholder="Descrição" name="descri" id="descricao" required>
+
+                                <br>
+
+                                <label for="operador"><b>Operadores</b></label>
+                                <select class="dropdown" placeholder="Escolha o nome" id="dropDownOperadores" name="operadores" required>
+                                </select>
+
+
+                                <label for="moradores"><b>Moradores</b></label>
+                                <select class="dropdown" placeholder="Escolha o nome" id="dropDownMoradores" name="moradores" required>
+                                </select>
+
+
+
+                                <center>
+                                    <button type="submit" class="btn button" onclick="addEntrega(document.getElementById('dataInicial').value,
+                                                                                                document.getElementById('descricao').value,
+                                                                                                document.getElementById('dropDownOperadores').value,
+                                                                                                document.getElementById('dataFinal').value,
+                                                                                                document.getElementById('dropDownMoradores').value); 
+                                                                                                closeForm();">Submit</button>
+                                    <button type="button" class="btn cancel button" onclick="closeForm();">Close</button>
+                                </center>
+                            </form>
+                        </div>
+                    </center>
+                </center>
+
+            </div>
+        </center>
+        <!-- fecha tabela -->
+
+        <!-- botoes -->
+        <script src="../src/model/morador.js"></script>
+        <script src="../src/service/moradorService.js"></script>
+        <script src="../src/model/operator.js"></script>
+        <script src="../src/service/operatorService.js"></script>
+        <script src="../src/model/entrega.js"></script>
+        <script src="../src/service/entregaService.js"></script>
+
+</body>
+
+</html>
