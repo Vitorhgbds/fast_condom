@@ -73,12 +73,18 @@ function mountNotEntregue(notEntregues){
         var novaColunaOperador = document.createElement("td")
         var novaColunaRetirada = document.createElement("td")
         var novaColunaMorador = document.createElement("td")
-        var novaColunaRegistrar = document.createElement("td")
         var buttonRegistrar = document.createElement("button")
         var centralizando = document.createElement("center");
 
+        novaColunaId.innerText = ent.id
+        novaColunaData.innerText = ent.data_Saida
+        novaColunaDescricao.innerText = ent.descricao
+
+        
         buttonRegistrar.style = "padding-left:10%; padding-right:10%;"
         buttonRegistrar.innerText = "Registro"
+        
+        centralizando.append(buttonRegistrar)
     })
 }
 
