@@ -1,88 +1,86 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Operadores</title>
-    <!-- fonte nao mexa aqui  -->
-    <link rel="stylesheet" href="../css/layout.css">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Operadores</title>
+        <!-- fonte nao mexa aqui  -->
+        <link rel="stylesheet" href="../css/layout.css">
+    </head>
 
-<body>
-<!-- menu aqui nao mexer -->
-<div id="header_line">
-    <div id="sidebar_title">FAST CONDOM<br></div>
+    <body>
+    <!-- menu aqui nao mexer -->
+    <div id="header_line">
+        <div id="sidebar_title">FAST CONDOM<br></div>
 
-    <div id="custom_links">
-        <a href="moradoresList.html"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
-            </br>Home</a>
-        <a href="entregasList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
-            </br>Entregas</a>
-        <a href="funcionalidades.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
-            </br>Funcionalidades</a>
-        <a href="operadores.html"><img src="../svg/operador.svg" style="width:20px; padding-bottom:1px;"></img>
-            </br>Operador</a>
-        <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
-            </br>Morador</a>
-    </div>
-
-    <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
-    <div id="sidebar_oper">Operador<br>
-        <div class="name">Mathias K.</div>
-    </div>
-
-    <!-- LOGIN FACA AQUI  -->
-    <div id="sidebar_login">
-        <a href="index.html" alt="Trocar usuário">Faça Login</a>
-    </div>
-</div>
-
-<!-- fim do menu  -->
-
-
-
-    <!-- se quiser por titulo pra tabela poe aqui -->
-    <center>
-        <div class="estruc">
-            <div class="titleTable">
-                Tabela Operadores
-            </div>
+        <div id="custom_links">
+            <a href="moradoresList.html"><img src="../svg/home.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Home</a>
+            <a href="entregasList.html"><img src="../svg/entregas.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Entregas</a>
+            <a href="funcionalidades.html"><img src="../svg/funcionalidade.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Funcionalidades</a>
+            <a href="operadores.html"><img src="../svg/operador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Operador</a>
+            <a href="moradoresList.html"><img src="../svg/moderador.svg" style="width:20px; padding-bottom:1px;"></img>
+                </br>Morador</a>
         </div>
-    </center>
 
-    <!-- tabela aqui -->
-    <center>
-        <div style="top:45%!important;" class="containerChefe">
-            <div class="container">
+        <!-- SIGLA E/OU NOME DOS OPERADORES AQUI  -->
+        <div id="sidebar_oper">Operador<br>
+            <div class="name">Mathias K.</div>
+        </div>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Sigla</th>
-                            <th>Opções</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabelaOperadores">
-                    </tbody>
-                </table>
+        <!-- LOGIN FACA AQUI  -->
+        <div id="sidebar_login">
+            <a href="index.html" alt="Trocar usuário">Faça Login</a>
+        </div>
+    </div>
 
+    <!-- fim do menu  -->
+
+
+
+        <!-- se quiser por titulo pra tabela poe aqui -->
+        <center>
+            <div class="titleEs">
+                <div class="titleTable">Moradores</div>
             </div>
+
+        <!-- tabela aqui -->
             <center>
-                <div class="add">
-                    <button style="padding: 5px 15px 5px 15px;
-                font-size: small;
-                font-family: 'Montserrat', sans-serif;" class="button" onclick="addOperator(prompt('digite um nome'))">Adicionar</button>
+                <div class="containerChefe">
+                    <div class="container">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Sigla</th>
+                                    <th>Opções</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelaOperadores">
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <center>
+                        <div class="add">
+                            <button style="padding: 5px 15px 5px 15px;
+                        font-size: small;
+                        font-family: 'Montserrat', sans-serif;" class="button" onclick="addOperator(prompt('digite um nome'))">Adicionar</button>
+                        </div>
+                    </center>
                 </div>
             </center>
-        </div>
-    </center>
-    <!-- fecha tabela -->
+        </center>
+        <!-- fecha tabela -->
 
-    <!-- botoes -->
-    <script src="../src/model/operator.js"></script>
-    <script src="../src/service/operatorService.js"></script>
-</body>
+        <!-- botoes -->
+        <script src="../src/model/operator.js"></script>
+        <script src="../src/service/operatorService.js"></script>
+    </body>
 
 </html>
