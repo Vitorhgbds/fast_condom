@@ -54,7 +54,32 @@ function searchByNotEntregue(){
             notEntregue.push(ent)
         }
     })
-    tableEntregasMout(notEntregue)
+    mountNotEntregue(notEntregue)
+}
+
+function mountNotEntregue(notEntregues){
+    const tableEntregas = document.getElementById('table')
+    tableEntregas.removeChild(corpoTabelaEntregas)
+    corpoTabelaEntregas = document.createElement('tbody')
+    corpoTabelaEntregas.id = "tabelaEntregas"
+    tableEntregas.append(corpoTabelaEntregas)
+
+    notEntregues.forEach(ent => {
+        var novaLinha = document.createElement("tr")
+        var novaColunaId = document.createElement("td")
+        var novaColunaData = document.createElement("td")
+        var novaColunaDescricao = document.createElement("td")
+        var novaColunaNroAp = document.createElement("td")
+        var novaColunaOperador = document.createElement("td")
+        var novaColunaRetirada = document.createElement("td")
+        var novaColunaMorador = document.createElement("td")
+        var novaColunaRegistrar = document.createElement("td")
+        var buttonRegistrar = document.createElement("button")
+        var centralizando = document.createElement("center");
+
+        buttonRegistrar.style = "padding-left:10%; padding-right:10%;"
+        buttonRegistrar.innerText = "Registro"
+    })
 }
 
 function tableEntregasMout(entregas) {
