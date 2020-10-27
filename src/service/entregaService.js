@@ -83,6 +83,10 @@ function mountNotEntregue(notEntregues) {
         
         buttonRegistrar.style = "padding-left:10%; padding-right:10%;"
         buttonRegistrar.innerText = "Registro"
+        buttonRegistrar.addEventListener("click", () => {
+            openFormFun()
+        })
+
         
         centralizando.append(buttonRegistrar)
     })
@@ -175,7 +179,7 @@ function closeForm() {
 }
 
 ///// segundo pop 
-function openFormFun() {
+function openFormFun(entrega) {
     document.getElementById("myForm").style.display = "block";
 }
 
