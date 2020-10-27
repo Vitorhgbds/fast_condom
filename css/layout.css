@@ -369,7 +369,7 @@ tbody td:hover:before {
 
 .titleEs {
     position: absolute;
-    margin-top: 15%;
+    margin-top: 20%;
     left: 50%;
     display: inline-flex;
     -webkit-transform: translate(-50%, -50%);
