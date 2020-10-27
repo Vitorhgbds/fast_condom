@@ -1,6 +1,10 @@
 const corpoTabelaMoradores = document.getElementById('tabelaMoradores')
+const operadorMenuMorador = document.getElementById('nomeOperadorAtual')
 
 let moradores = []
+
+let operadorAtualMorador = JSON.parse(localStorage.getItem('loginOperador'))
+operadorMenuMorador.innerText = operadorAtualMorador.sigla
 
 moradores = JSON.parse(localStorage.getItem('moradores')) 
                         || [new Morador("Josh Pereira","1112223331","B32"),
