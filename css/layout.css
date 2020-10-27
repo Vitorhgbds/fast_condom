@@ -368,7 +368,7 @@ tbody td:hover:before {
 }
 
 .titleEs {
-    position: fixed;
+    position: absolute;
     margin-top: 10%;
     left: 50%;
     display: inline-flex;
