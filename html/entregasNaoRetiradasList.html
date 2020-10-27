@@ -55,7 +55,7 @@
 
     <!-- botao para abrir o popUp -->
     <div style="top:70%!important;" class="add">
-        <button href="#?w=500" style="padding: 5px 15px 5px 15px;font-size: small;font-family: 'Montserrat', sans-serif;" class="open-buttonFunct; button" onclick="openForm();loadMoradores()">Adicionar</button>
+        <button href="#?w=500" style="padding: 5px 15px 5px 15px;font-size: small;font-family: 'Montserrat', sans-serif;" class="open-buttonFunct; button" onclick="openFormFun();loadMoradores()">Adicionar</button>
 
     </div>
 
@@ -65,18 +65,9 @@
             <form class="form-containerFunct">
                 <h1>Login</h1>
 
-                <label for="dataInicial"><b>Data Inicial</b></label><br>
-                <input type="date" placeholder="19/08/2020" name="dataInicial" id="dataInicial" required>
+                <label for="dataRetirada"><b>Data Retirada</b></label><br>
+                <input type="date" placeholder="19/08/2020" name="dataRetirada" id="dataRetirada" required>
                 <br>
-                <br>
-                <label for="dataFinal"><b>Data Final</b></label><br>
-                <input type="date" placeholder="10/08/2021" name="dataFinal" required id="dataFinal">
-
-                <br>
-                <br>
-                <label for="descr"><b>Descrição</b></label><br>
-                <input type="text" placeholder="Descrição" name="descri" id="descricao" required>
-
                 <br>
                 <label for="moradores"><b>Moradores</b></label>
                 <select class="dropdownFunct" placeholder="Escolha o nome" id="dropDownMoradores" name="moradores" required>
@@ -91,7 +82,7 @@
                                                                                                 document.getElementById('dataFinal').value,
                                                                                                 document.getElementById('dropDownMoradores').value); 
                                                                                                 closeForm();">Submit</button>
-                    <button type="button" class="btn cancel button" onclick="closeForm();">Close</button>
+                    <button type="button" class="btn cancel button" onclick="closeFormFun();">Close</button>
                 </center>
             </form>
         </div>
