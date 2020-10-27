@@ -1,6 +1,11 @@
 const corpoTabelaEntregas = document.getElementById('tabelaEntregas')
+const operadorMenuEntrega = document.getElementById('nomeOperadorAtual')
 
 let entregas = []
+
+let operadorAtualEntrega = JSON.parse(localStorage.getItem('loginOperador'))
+
+operadorMenuEntrega.innerText = operadorAtualEntrega.sigla
 
 entregas = JSON.parse(localStorage.getItem('entregas')) || [new Entrega("lalalaa", findMorador(1),
     findOperator("J. M"), "26/10/2020", "27/10/2020")]
