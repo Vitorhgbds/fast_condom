@@ -296,19 +296,6 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-.titleTable {
-    color: #f3705A;
-    font-size: larger;
-    width: auto;
-    height: auto;
-    letter-spacing: 2px;
-    font-family: 'calibri';
-    padding: 5%;
-    border-bottom: 2px solid #f3705a;
-    color: #848181;
-    font-weight: 700;
-}
-
 .num {
     font-family: 'Montserrat', sans-serif;
     font-size: smaller;
