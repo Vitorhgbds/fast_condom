@@ -1,4 +1,4 @@
-const corpoTabelaEntregas = document.getElementById('tabelaEntregas')
+let corpoTabelaEntregas = document.getElementById('tabelaEntregas')
 const operadorMenuEntrega = document.getElementById('nomeOperadorAtual')
 
 let entregas = []
@@ -32,12 +32,18 @@ function addEntrega(data_Saida, descricao, operadorSigla, data_Entrega, moradorI
 }
 
 function searchByDescription(descricao){
+    const tableEntregas = document.getElementById('table')
+    tableEntregas.removeChild(corpoTabelaEntregas)
+    corpoTabelaEntregas = document.createElement('tbody')
+    corpoTabelaEntregas.id = "tabelaEntregas"
+    tableEntregas.append(corpoTabelaEntregas)
     var entregasDescricao = []
     entregas.forEach(ent => {
         if(ent.descricao.includes(descricao)){
             entregasDescricao.push(ent)
         }
     })
+
     tableEntregasMout(entregasDescricao)
 }
 
