@@ -13,7 +13,9 @@ entregas = JSON.parse(localStorage.getItem('entregas')) || [new Entrega("lalalaa
 localStorage.setItem('entregas', JSON.stringify(entregas))
 globalEntregaId = parseInt(localStorage.getItem('idEntregas') || '1')
 
-tableEntregasMout(entregas)
+if(corpoTabelaEntregas){
+    tableEntregasMout(entregas)
+}
 
 function addEntrega(data_Saida, descricao, operadorSigla, data_Entrega, moradorId) {
     console.log(data_Entrega);
@@ -54,6 +56,7 @@ function searchByNotEntregue() {
             notEntregue.push(ent)
         }
     })
+    console.log(notEntregue);
     mountNotEntregue(notEntregue)
 }
 
@@ -80,15 +83,29 @@ function mountNotEntregue(notEntregues) {
         novaColunaData.innerText = ent.data_Saida
         novaColunaDescricao.innerText = ent.descricao
 
-        
+        novaColunaNroAp.innerText = ent.morador.nroAp
+        novaColunaOperador.innerText = ent.operador.sigla
+        novaColunaRetirada.innerText = ent.data_Entrega
+        novaColunaMorador.innerText = ent.morador.nome
+
         buttonRegistrar.style = "padding-left:10%; padding-right:10%;"
-        buttonRegistrar.innerText = "Registro"
+        buttonRegistrar.innerText = "Registrar"
+        buttonRegistrar.className = "button"
         buttonRegistrar.addEventListener("click", () => {
             openFormFun()
+            loadMoradores()
         })
 
-        
         centralizando.append(buttonRegistrar)
+        novaLinha.append(novaColunaId)
+        novaLinha.append(novaColunaData)
+        novaLinha.append(novaColunaDescricao)
+        novaLinha.append(novaColunaNroAp)
+        novaLinha.append(novaColunaOperador)
+        novaLinha.append(novaColunaRetirada)
+        novaLinha.append(novaColunaMorador)
+        novaLinha.append(centralizando)
+        corpoTabelaEntregas.append(novaLinha)
     })
 }
 

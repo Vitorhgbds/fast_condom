@@ -15,7 +15,9 @@ moradores = JSON.parse(localStorage.getItem('moradores'))
 localStorage.setItem('moradores',JSON.stringify(moradores))
 globalMoradorId = parseInt(localStorage.getItem('idMoradores') || '3')
 
-tableOperatorsMout(operators)
+if(corpoTabelaOperadoresLogar){
+    tableOperatorsMout(operators)
+}
 
 function tableOperatorsMout(operators) {
     operators.forEach(ope => {

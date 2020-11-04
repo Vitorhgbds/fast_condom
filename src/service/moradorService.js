@@ -15,8 +15,9 @@ localStorage.setItem('moradores',JSON.stringify(moradores))
 globalMoradorId = parseInt(localStorage.getItem('idMoradores') || '3')
 
 
-
-tableMoradoresMout(moradores)
+if(corpoTabelaMoradores){
+    tableMoradoresMout(moradores)
+}
 
 function addMorador(nome,RG,nroAp) {
     let morador = new Morador(nome,RG,nroAp)
